@@ -95,6 +95,63 @@ export default async function handler(req, res) {
       });
     }
 
+    if (req.method === "DELETE") {
+      // Delete a comment
+      const { id, section } = req.query;
+
+      if (!id || !section) {
+        return res.status(400).json({
+          error: "Missing required parameters: id, section",
+        });
+      }
+
+      // Get current comments for the section
+      const comments = await redis.lrange(`comments:${section}`, 0, -1);
+      const parsedComments = comments.map((comment) => JSON.parse(comment));
+
+      // Filter out the comment to delete
+      const filteredComments = parsedComments.filter(
+        (comment) => comment.id !== id
+      );
+
+      if (filteredComments.length === parsedComments.length) {
+        return res.status(404).json({ error: "Comment not found" });
+      }
+
+      // Clear the list and re-add filtered comments
+      await redis.del(`comments:${section}`);
+      if (filteredComments.length > 0) {
+        const commentStrings = filteredComments.map((comment) =>
+          JSON.stringify(comment)
+        );
+        await redis.lpush(`comments:${section}`, ...commentStrings);
+        await redis.expire(`comments:${section}`, 30 * 24 * 60 * 60);
+      }
+
+      // Also remove from global comments list
+      const allComments = await redis.lrange("comments:all", 0, -1);
+      const parsedAllComments = allComments.map((comment) =>
+        JSON.parse(comment)
+      );
+      const filteredAllComments = parsedAllComments.filter(
+        (comment) => comment.id !== id
+      );
+
+      await redis.del("comments:all");
+      if (filteredAllComments.length > 0) {
+        const allCommentStrings = filteredAllComments.map((comment) =>
+          JSON.stringify(comment)
+        );
+        await redis.lpush("comments:all", ...allCommentStrings);
+        await redis.expire("comments:all", 30 * 24 * 60 * 60);
+      }
+
+      return res.status(200).json({
+        success: true,
+        message: "Comment deleted successfully",
+      });
+    }
+
     return res.status(405).json({ error: "Method not allowed" });
   } catch (error) {
     console.error("Redis error:", error);

@@ -1120,41 +1120,35 @@ async function submitComment() {
     email: email || null,
   };
 
-  // Save to Redis via API (fallback to local storage)
+  // Save comment to Redis (both local dev with vercel dev and production)
   try {
     const response = await fetch("/api/comments", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(comment),
     });
 
     if (response.ok) {
+      const result = await response.json();
       comments.push(comment);
 
-      // Remember user info for next comment
       localStorage.setItem("commentAuthor", author);
       if (email) localStorage.setItem("commentEmail", email);
 
       updateCommentCount();
       loadCommentsForSection(currentSection);
       closeCommentModal();
-
-      // Clear form
       document.getElementById("commentText").value = "";
+
+      console.log("Comment saved to Redis:", result.message);
     } else {
-      throw new Error("Failed to save comment");
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Failed to save comment");
     }
   } catch (error) {
     console.error("Error saving comment:", error);
-    // Fallback to local storage
-    comments.push(comment);
-    updateCommentCount();
-    loadCommentsForSection(currentSection);
-    closeCommentModal();
     alert(
-      "Comment saved locally. Note: Will not persist between sessions without server setup."
+      `Failed to save comment: ${error.message}\n\nFor local development, run: vercel dev`
     );
   }
 }
@@ -1189,6 +1183,11 @@ function loadCommentsForSection(section) {
                         <span class="comment-time">${formatTime(
                           comment.timestamp
                         )}</span>
+                        <button class="delete-comment-btn" onclick="deleteComment('${
+                          comment.id
+                        }', '${
+        comment.section
+      }')" title="Delete comment">×</button>
                     </div>
                     <div class="comment-body">${comment.text}</div>
                     <div class="comment-meta">
@@ -1370,6 +1369,40 @@ document.addEventListener("DOMContentLoaded", function () {
   loadExistingComments();
 });
 
+// Delete a comment
+async function deleteComment(commentId, section) {
+  if (!confirm("Are you sure you want to delete this comment?")) {
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      `/api/comments?id=${commentId}&section=${section}`,
+      {
+        method: "DELETE",
+      }
+    );
+
+    if (response.ok) {
+      // Remove from local array
+      const index = comments.findIndex((c) => c.id == commentId);
+      if (index > -1) {
+        comments.splice(index, 1);
+      }
+
+      updateCommentCount();
+      loadCommentsForSection(currentSection);
+      console.log("Comment deleted successfully");
+    } else {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Failed to delete comment");
+    }
+  } catch (error) {
+    console.error("Error deleting comment:", error);
+    alert(`Failed to delete comment: ${error.message}`);
+  }
+}
+
 // Load existing comments from Redis
 async function loadExistingComments() {
   try {
@@ -1381,6 +1414,7 @@ async function loadExistingComments() {
       if (currentSection) {
         loadCommentsForSection(currentSection);
       }
+      console.log(`Loaded ${existingComments.length} comments from Redis`);
     }
   } catch (error) {
     console.log("No existing comments or server not available:", error);
