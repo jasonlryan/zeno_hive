@@ -27,7 +27,19 @@ export default async function handler(req, res) {
       if (section) {
         // Get comments for specific section
         const comments = await redis.lrange(`comments:${section}`, 0, -1);
-        const parsedComments = comments.map((comment) => JSON.parse(comment));
+        const parsedComments = comments
+          .map((comment) => {
+            try {
+              // Check if it's already an object or a valid JSON string
+              if (typeof comment === "object") return comment;
+              if (comment === "[object Object]") return null; // Skip malformed data
+              return JSON.parse(comment);
+            } catch (e) {
+              console.warn("Failed to parse comment:", comment, e.message);
+              return null; // Skip malformed comments
+            }
+          })
+          .filter((comment) => comment !== null); // Remove null entries
         return res.status(200).json(parsedComments);
       } else {
         // Get all comments across all sections
@@ -43,7 +55,18 @@ export default async function handler(req, res) {
 
         for (const sec of sections) {
           const sectionComments = await redis.lrange(`comments:${sec}`, 0, -1);
-          const parsed = sectionComments.map((comment) => JSON.parse(comment));
+          const parsed = sectionComments
+            .map((comment) => {
+              try {
+                if (typeof comment === "object") return comment;
+                if (comment === "[object Object]") return null;
+                return JSON.parse(comment);
+              } catch (e) {
+                console.warn("Failed to parse comment:", comment, e.message);
+                return null;
+              }
+            })
+            .filter((comment) => comment !== null);
           allComments.push(...parsed);
         }
 
@@ -107,7 +130,18 @@ export default async function handler(req, res) {
 
       // Get current comments for the section
       const comments = await redis.lrange(`comments:${section}`, 0, -1);
-      const parsedComments = comments.map((comment) => JSON.parse(comment));
+      const parsedComments = comments
+        .map((comment) => {
+          try {
+            if (typeof comment === "object") return comment;
+            if (comment === "[object Object]") return null;
+            return JSON.parse(comment);
+          } catch (e) {
+            console.warn("Failed to parse comment for deletion:", comment);
+            return null;
+          }
+        })
+        .filter((comment) => comment !== null);
 
       // Filter out the comment to delete
       const filteredComments = parsedComments.filter(
@@ -130,9 +164,21 @@ export default async function handler(req, res) {
 
       // Also remove from global comments list
       const allComments = await redis.lrange("comments:all", 0, -1);
-      const parsedAllComments = allComments.map((comment) =>
-        JSON.parse(comment)
-      );
+      const parsedAllComments = allComments
+        .map((comment) => {
+          try {
+            if (typeof comment === "object") return comment;
+            if (comment === "[object Object]") return null;
+            return JSON.parse(comment);
+          } catch (e) {
+            console.warn(
+              "Failed to parse global comment for deletion:",
+              comment
+            );
+            return null;
+          }
+        })
+        .filter((comment) => comment !== null);
       const filteredAllComments = parsedAllComments.filter(
         (comment) => comment.id !== id
       );

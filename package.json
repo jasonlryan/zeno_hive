@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "HIVE 3.0 V0 Specification Workspace - Team Collaboration Platform",
   "scripts": {
-    "dev": "vercel dev",
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
     "deploy": "vercel --prod"
   },
   "dependencies": {
