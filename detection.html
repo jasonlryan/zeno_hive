@@ -17,7 +17,7 @@
                 <a href="index.html">Documentation</a>
                 <a href="#" class="nav-active">System Areas</a>
                 <a href="#" onclick="toggleCommentMode()">💬 Comment Mode</a>
-                <a href="#" onclick="showTeamModal()">👥 Team</a>
+                <a href="#" onclick="showTeamActivity()">👥 Team</a>
             </nav>
         </div>
     </header>
@@ -236,6 +236,19 @@
                 <button class="collab-btn" onclick="flagForReview('detection')">🏁 Flag for Review</button>
             </div>
         </main>
+
+        <!-- Right Sidebar (Comments) -->
+        <aside class="right-sidebar">
+            <div class="comments-section">
+                <h3>💬 Comments <span class="comment-count">(0)</span></h3>
+                <div id="commentsContainer">
+                    <div class="no-comments">
+                        <p>No comments yet. Enable comment mode to start discussing!</p>
+                        <button class="btn-secondary small" onclick="toggleCommentMode()">Enable Comments</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
     </div>
 
     <!-- Comment Mode Overlay -->
@@ -245,41 +258,75 @@
         </div>
     </div>
 
-    <!-- Modals -->
-    <div id="comment-modal" class="modal">
+    <!-- Comment Modal -->
+    <div id="commentModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('comment-modal')">&times;</span>
-            <h3>Add Comment</h3>
-            <textarea id="comment-text" placeholder="Enter your comment or suggestion..."></textarea>
-            <div class="modal-actions">
-                <button onclick="saveComment()">Save Comment</button>
-                <button onclick="closeModal('comment-modal')">Cancel</button>
+            <div class="modal-header">
+                <h3>💬 Add Comment</h3>
+                <button class="close-btn" onclick="closeCommentModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="commentContext" class="comment-context-display" style="display: none;"></div>
+                <div class="user-info">
+                    <input type="text" id="commentAuthor" placeholder="Your name (required)" required>
+                    <input type="email" id="commentEmail" placeholder="Email (optional)">
+                </div>
+                <textarea id="commentText" placeholder="Share your thoughts, suggestions, or questions..."></textarea>
+                <div class="comment-options">
+                    <select id="commentType">
+                        <option value="comment">💬 Comment</option>
+                        <option value="suggestion">✏️ Suggestion</option>
+                        <option value="question">❓ Question</option>
+                        <option value="idea">💡 New Idea</option>
+                    </select>
+                    <select id="commentPriority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeCommentModal()">Cancel</button>
+                <button class="btn-primary" onclick="submitComment()">Add Comment</button>
             </div>
         </div>
     </div>
 
-    <div id="team-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('team-modal')">&times;</span>
-            <h3>Team Collaboration</h3>
-            <div class="team-section">
-                <h4>Active Contributors</h4>
-                <div class="team-list">
-                    <div class="team-member">👤 Jason Ryan (Product Lead)</div>
-                    <div class="team-member">👤 Creative Team Lead</div>
-                    <div class="team-member">👤 Technical Lead</div>
-                </div>
+    <!-- Team Activity Modal -->
+    <div id="teamModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>👥 Team Activity & Feedback</h3>
+                <button class="close-btn" onclick="closeTeamModal()">&times;</button>
             </div>
-            <div class="team-section">
-                <h4>Recent Activity</h4>
-                <div class="activity-feed">
-                    <div class="activity-item">Comment added to Detection workflow</div>
-                    <div class="activity-item">Edit suggested for data sources</div>
+            <div class="modal-body">
+                <div id="teamActivityContent">
+                    <div class="activity-tabs">
+                        <button class="tab-btn active" onclick="showTab('recent')">Recent Activity</button>
+                        <button class="tab-btn" onclick="showTab('comments')">All Comments</button>
+                        <button class="tab-btn" onclick="showTab('decisions')">Decisions</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="recentTab" class="tab-pane active">
+                            <p class="empty-state">No recent activity. Start by adding comments to begin collaboration!</p>
+                        </div>
+                        <div id="commentsTab" class="tab-pane">
+                            <p class="empty-state">No comments yet. Enable comment mode and click anywhere to add feedback.</p>
+                        </div>
+                        <div id="decisionsTab" class="tab-pane">
+                            <p class="empty-state">No decisions recorded yet. Decisions will appear here as the team reaches consensus.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <script>
+        // Set the current section for this page
+        window.currentSection = 'detection';
+    </script>
     <script src="script.js"></script>
 </body>
 </html> 
