@@ -143,9 +143,9 @@ export default async function handler(req, res) {
         })
         .filter((comment) => comment !== null);
 
-      // Filter out the comment to delete
+      // Filter out the comment to delete (handle both string and number IDs)
       const filteredComments = parsedComments.filter(
-        (comment) => comment.id !== id
+        (comment) => comment.id != id
       );
 
       if (filteredComments.length === parsedComments.length) {
@@ -180,7 +180,7 @@ export default async function handler(req, res) {
         })
         .filter((comment) => comment !== null);
       const filteredAllComments = parsedAllComments.filter(
-        (comment) => comment.id !== id
+        (comment) => comment.id != id
       );
 
       await redis.del("comments:all");
