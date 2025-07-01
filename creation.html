@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creation - AI Hive System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="zeno-logo">ZENO</span>
+                <span class="logo-text">AI HIVE</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Documentation</a>
+                <a href="#" class="nav-active">System Areas</a>
+                <a href="#" onclick="toggleCommentMode()">💬 Comment Mode</a>
+                <a href="#" onclick="showTeamModal()">👥 Team</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>System Areas</h3>
+                <nav class="sidebar-nav">
+                    <a href="detection.html">📡 Detection</a>
+                    <a href="ideation.html">🧠 Ideation</a>
+                    <a href="creation.html" class="nav-active">✨ Creation</a>
+                    <a href="distribution.html">🚀 Distribution</a>
+                </nav>
+            </div>
+            <div class="sidebar-section">
+                <h3>Quick Links</h3>
+                <nav class="sidebar-nav">
+                    <a href="index.html">← Back to Docs</a>
+                    <a href="#process-definition">Process Definition</a>
+                    <a href="#asset-types">Asset Types</a>
+                    <a href="#ai-tools">AI Tools</a>
+                    <a href="#success-metrics">Success Metrics</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>✨ Creative Asset Generation</h1>
+                <p class="subtitle">Automated creation of campaign assets from approved concepts using text-to-image and text-to-video AI</p>
+                <div class="status-badge">Phase 3 of 4</div>
+                <div class="human-loop-badge">👤 Human in Loop</div>
+            </div>
+
+            <section id="process-definition" class="content-section">
+                <h2>Process Definition</h2>
+                <div class="process-overview">
+                    <p>The Creation phase transforms approved creative concepts into production-ready campaign assets using advanced AI generation tools. This automated production system creates channel-agnostic content that can be adapted across multiple platforms while maintaining brand consistency and creative quality through human oversight and approval processes.</p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Concept Translation</h3>
+                            <p>AI interpretation of approved creative concepts into detailed production briefs with visual and messaging specifications.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Multi-Format Generation</h3>
+                            <p>Automated creation of assets across multiple formats and platforms using text-to-image and text-to-video AI tools.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Brand Compliance Check</h3>
+                            <p>Automated verification against brand guidelines including visual identity, tone of voice, and messaging standards.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Human Review & Refinement</h3>
+                            <p>Creative team evaluation and approval with iterative refinement process for optimal asset quality and brand alignment.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="asset-types" class="content-section">
+                <h2>Asset Types & Formats</h2>
+                <div class="data-grid">
+                    <div class="data-source-card primary">
+                        <h3>Social Media Content</h3>
+                        <div class="source-type">Platform-Optimized</div>
+                        <p>Platform-specific posts, stories, and video content optimized for each social media channel's unique format requirements and audience behaviors.</p>
+                        <div class="capabilities">
+                            <span class="capability">Instagram Stories</span>
+                            <span class="capability">TikTok Videos</span>
+                            <span class="capability">Twitter Graphics</span>
+                            <span class="capability">LinkedIn Posts</span>
+                        </div>
+                    </div>
+                    
+                    <div class="data-source-card">
+                        <h3>Campaign Hero Assets</h3>
+                        <div class="source-type">Integrated Campaigns</div>
+                        <p>Primary campaign visuals and videos designed for use across multiple channels including paid media, website integration, and brand communications.</p>
+                        <div class="capabilities">
+                            <span class="capability">Hero Videos</span>
+                            <span class="capability">Key Visuals</span>
+                            <span class="capability">Brand Campaigns</span>
+                            <span class="capability">Print Adaptations</span>
+                        </div>
+                    </div>
+
+                    <div class="data-source-card">
+                        <h3>Channel-Agnostic Content</h3>
+                        <div class="source-type">Flexible Formats</div>
+                        <p>Modular content elements that can be adapted and deployed across various marketing channels with consistent messaging and visual identity.</p>
+                        <div class="capabilities">
+                            <span class="capability">Modular Components</span>
+                            <span class="capability">Scalable Graphics</span>
+                            <span class="capability">Flexible Copy</span>
+                            <span class="capability">Multi-Use Assets</span>
+                        </div>
+                    </div>
+
+                    <div class="data-source-card">
+                        <h3>A/B Testing Variations</h3>
+                        <div class="source-type">Performance Optimization</div>
+                        <p>Multiple creative variations of the same concept to enable testing and optimization of messaging, visuals, and calls-to-action.</p>
+                        <div class="capabilities">
+                            <span class="capability">Message Variants</span>
+                            <span class="capability">Visual Alternatives</span>
+                            <span class="capability">CTA Testing</span>
+                            <span class="capability">Format Options</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ai-tools" class="content-section">
+                <h2>AI Generation Tools & Technologies</h2>
+                <div class="workflow-container">
+                    <div class="workflow-card">
+                        <h3>Text-to-Image Generation</h3>
+                        <p>Advanced AI models for creating high-quality visual assets from creative concept descriptions with brand-specific style training and consistency controls.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Creative briefs, brand guidelines
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> AI image generation, style consistency
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Brand-aligned visual assets
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Text-to-Video Creation</h3>
+                        <p>AI-powered video generation for creating dynamic content including motion graphics, animated sequences, and short-form video content for social platforms.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Video concepts, storyboards
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Video generation, motion design
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Platform-ready video content
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Automated Brand Compliance</h3>
+                        <p>AI systems trained on brand guidelines to ensure all generated assets maintain visual identity consistency, appropriate tone, and messaging alignment.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Generated assets, brand standards
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Compliance verification, quality check
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Brand-compliant final assets
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Multi-Platform Optimization</h3>
+                        <p>Automated adaptation of core creative assets to meet specific platform requirements including dimensions, file formats, and technical specifications.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Master assets, platform requirements
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Format optimization, sizing adaptation
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Platform-specific asset variants
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-capabilities">
+                    <h3>Advanced AI Capabilities</h3>
+                    <ul>
+                        <li><strong>Style Consistency:</strong> Maintained visual brand identity across all generated assets</li>
+                        <li><strong>Content Adaptation:</strong> Automatic resizing and reformatting for different platforms</li>
+                        <li><strong>Quality Control:</strong> AI-powered assessment of asset quality and brand alignment</li>
+                        <li><strong>Rapid Iteration:</strong> Quick generation of multiple creative variations</li>
+                        <li><strong>Cultural Sensitivity:</strong> AI training to avoid inappropriate or insensitive content</li>
+                        <li><strong>Performance Prediction:</strong> AI assessment of asset effectiveness potential</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- <section id="success-metrics" class="content-section">
+                <h2>Success Metrics & KPIs</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">< 2hrs</div>
+                        <div class="metric-label">Asset Generation Time</div>
+                        <p>Average time from approved concept to production-ready assets across multiple formats and platforms.</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">95%+</div>
+                        <div class="metric-label">Brand Compliance Rate</div>
+                        <p>Percentage of AI-generated assets that meet brand guidelines without requiring manual corrections.</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">80%+</div>
+                        <div class="metric-label">First-Pass Approval</div>
+                        <p>Percentage of generated assets approved by creative teams without requiring significant revisions.</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">5+</div>
+                        <div class="metric-label">Asset Variations</div>
+                        <p>Average number of creative variations generated per approved concept for testing and optimization.</p>
+                    </div>
+                </div>
+
+                <div class="metrics-details">
+                    <h3>Creation Quality Indicators</h3>
+                    <ul>
+                        <li><strong>Visual Quality Score:</strong> AI and human assessment of asset aesthetic and technical quality</li>
+                        <li><strong>Brand Consistency Rating:</strong> Adherence to visual identity and messaging guidelines</li>
+                        <li><strong>Platform Optimization:</strong> Technical compliance with platform-specific requirements</li>
+                        <li><strong>Creative Diversity:</strong> Range of creative approaches within brand parameters</li>
+                        <li><strong>Production Efficiency:</strong> Speed and resource efficiency compared to traditional methods</li>
+                        <li><strong>Iteration Capability:</strong> Ability to quickly generate alternative versions and refinements</li>
+                    </ul>
+                </div>
+
+                <div class="creation-benefits">
+                    <h3>Creation Phase Benefits</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <h4>Speed to Market</h4>
+                            <p>Dramatic reduction in asset production time from days to hours</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h4>Cost Efficiency</h4>
+                            <p>Reduced production costs and resource requirements</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h4>Creative Consistency</h4>
+                            <p>Automated brand compliance and visual identity maintenance</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h4>Scale Capability</h4>
+                            <p>Ability to generate multiple variations and formats simultaneously</p>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <div class="collaboration-bar">
+                <button class="collab-btn" onclick="addComment('creation')">💬 Add Comment</button>
+                <button class="collab-btn" onclick="suggestEdit('creation')">✏️ Suggest Edit</button>
+                <button class="collab-btn" onclick="flagForReview('creation')">🏁 Flag for Review</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Comment Mode Overlay -->
+    <div id="comment-overlay" class="comment-overlay">
+        <div class="comment-instructions">
+            Click anywhere on the page to add a comment
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="comment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('comment-modal')">&times;</span>
+            <h3>Add Comment</h3>
+            <textarea id="comment-text" placeholder="Enter your comment or suggestion..."></textarea>
+            <div class="modal-actions">
+                <button onclick="saveComment()">Save Comment</button>
+                <button onclick="closeModal('comment-modal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="team-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('team-modal')">&times;</span>
+            <h3>Team Collaboration</h3>
+            <div class="team-section">
+                <h4>Active Contributors</h4>
+                <div class="team-list">
+                    <div class="team-member">👤 Jason Ryan (Product Lead)</div>
+                    <div class="team-member">👤 Creative Team Lead</div>
+                    <div class="team-member">👤 Technical Lead</div>
+                </div>
+            </div>
+            <div class="team-section">
+                <h4>Recent Activity</h4>
+                <div class="activity-feed">
+                    <div class="activity-item">Comment added to AI tools section</div>
+                    <div class="activity-item">Edit suggested for asset types</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

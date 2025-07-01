@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hive System Architecture</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 0;
+            padding: 40px;
+            box-shadow: none;
+            border: 1px solid #e9ecef;
+        }
+        
+        .zeno-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #4CAF50;
+        }
+        
+        .zeno-logo {
+            font-size: 3em;
+            font-weight: 900;
+            color: #4CAF50;
+            margin-right: 30px;
+            letter-spacing: -2px;
+        }
+        
+        .header {
+            flex: 1;
+        }
+        
+        .header h1 {
+            color: #212529;
+            font-size: 2.2em;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .header p {
+            color: #6c757d;
+            font-size: 1.1em;
+            margin: 8px 0 0 0;
+            font-weight: 400;
+        }
+        
+        .system-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .stage {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 0;
+            padding: 30px;
+            border-left: 4px solid;
+            position: relative;
+            border: 1px solid #e9ecef;
+            margin-bottom: 2px;
+        }
+        
+        .stage-1 { border-left-color: #4CAF50; }
+        .stage-2 { border-left-color: #66BB6A; }
+        .stage-3 { border-left-color: #81C784; }
+        .stage-4 { border-left-color: #A5D6A7; }
+        
+        .stage-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            color: white;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+        
+        .stage-1 .stage-icon { background: #4CAF50; }
+        .stage-2 .stage-icon { background: #66BB6A; }
+        .stage-3 .stage-icon { background: #81C784; }
+        .stage-4 .stage-icon { background: #A5D6A7; }
+        
+        .stage-content {
+            flex: 1;
+        }
+        
+        .stage-title {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #212529;
+            margin: 0 0 12px 0;
+            letter-spacing: -0.5px;
+        }
+        
+        .stage-description {
+            color: #6c757d;
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .components {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .component {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 0;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .component:hover {
+            border-color: #4CAF50;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.1);
+        }
+        
+        .component-title {
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        
+        .component-detail {
+            font-size: 0.85em;
+            color: #6c757d;
+            line-height: 1.4;
+        }
+        
+        .arrow {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 1.8em;
+            margin: 15px 0;
+        }
+        
+        .outputs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .output-card {
+            background: #4CAF50;
+            color: white;
+            padding: 25px;
+            border-radius: 0;
+            text-align: left;
+            border: none;
+        }
+        
+        .output-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .output-description {
+            font-size: 0.9em;
+            opacity: 0.95;
+            line-height: 1.4;
+        }
+        
+        .human-loop {
+            position: absolute;
+            top: -12px;
+            right: 25px;
+            background: #212529;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 0;
+            font-size: 0.75em;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .metrics-highlight {
+            background: #81C784;
+            color: white;
+            padding: 18px;
+            border-radius: 0;
+            margin-top: 18px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        
+        .brand-filter {
+            background: #212529;
+            color: white;
+            padding: 20px;
+            border-radius: 0;
+            text-align: left;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="zeno-header">
+            <div class="zeno-logo">ZENO</div>
+            <div class="header">
+                <h1>🐝 AI Hive System Architecture</h1>
+                <p>End-to-End Cultural Moment Marketing Platform</p>
+            </div>
+        </div>
+        
+        <div class="brand-filter">
+            <strong>Brand Intelligence Layer:</strong> Custom programming per client (Nike, Aldi, Pilgrims) with brand guidelines, audience intelligence, and category-specific parameters
+        </div>
+        
+        <div class="system-flow">
+            <div class="stage stage-1">
+                <div class="stage-icon">📡</div>
+                <div class="stage-content">
+                    <h2 class="stage-title">1. Signal Detection & Listening</h2>
+                    <p class="stage-description">Always-on monitoring across digital channels to identify emerging cultural moments and trends</p>
+                    <div class="components">
+                        <div class="component">
+                            <div class="component-title">Peak Metrics API</div>
+                            <div class="component-detail">Social velocity, engagement metrics, trend trajectory analysis</div>
+                        </div>
+                        <div class="component">
+                            <div class="component-title">Multi-Platform Monitoring</div>
+                            <div class="component-detail">Social media, news, podcasts, Reddit, TikTok, brand mentions</div>
+                        </div>
+                        <div class="component">
+                            <div class="component-title">Cultural Moment Detection</div>
+                            <div class="component-detail">Rising trends with staying power vs. fleeting moments</div>
+                        </div>
+                    </div>
+                    <div class="metrics-highlight">
+                        <strong>Key Metrics:</strong> Share velocity, engagement trajectory, virality indicators, longevity predictions
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow">⬇️</div>
+            
+            <div class="stage stage-2">
+                <div class="stage-icon">🧠</div>
+                <div class="stage-content">
+                    <div class="human-loop">Human in Loop</div>
+                    <h2 class="stage-title">2. Intelligence & Ideation Engine</h2>
+                    <p class="stage-description">AI-powered analysis combining trend data with brand knowledge to generate relevant creative concepts</p>
+                    <div class="components">
+                        <div class="component">
+                            <div class="component-title">Connected GPTs</div>
+                            <div class="component-detail">Custom models trained on brand voice, guidelines, and historical performance</div>
+                        </div>
+                        <div class="component">
+                            <div class="component-title">Relevance Scoring</div>
+                            <div class="component-detail">Brand-moment fit analysis and opportunity assessment</div>
+                        </div>
+                        <div class="component">
+                            <div class="component-title">Creative Ideation</div>
+                            <div class="component-detail">Multiple concept generation with strategic rationale</div>
+                        </div>
+                        <div class="component">
+                            <div class="component-title">Message Testing</div>
+                            <div class="component-detail">Historical data analysis for predictive performance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow">⬇️</div>
+            
+            <div class="stage stage-3">
+                <div class="stage-icon">✨</div>
+                <div class="stage-content">
+                    <div class="human-loop">Human in Loop</div>
+                    <h2 class="stage-title">3. Creative Asset Generation</h2>
+                    <p class="stage-description">Automated creation of campaign assets from approved concepts using text-to-image and text-to-video AI</p>
+                    <div class="components">
+                        <div class="component">
+                            <div class="component-title">Social Media Assets</div>
+                            <div class="component-detail">Platform-optimized posts, stories, and video content</div>
+                        </div>
+                        <div class="component">
+                            <div class="component-title">Campaign Materials</div>
+                            <div class="component-detail">Hero assets for integrated campaigns and paid media</div>
+                        </div>
+                        <div class="component">
+                            <div class="component-title">Multiple Variations</div>
+                            <div class="component-detail">A/B testing options with different creative approaches</div>
+                        </div>
+                        <div class="component">
+                            <div class="component-title">Brand Compliance</div>
+                            <div class="component-detail">Automated adherence to visual identity and tone guidelines</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow">⬇️</div>
+            
+            <div class="stage stage-4">
+                <div class="stage-icon">🚀</div>
+                <div class="stage-content">
+                    <h2 class="stage-title">4. Distribution & Intelligence</h2>
+                    <p class="stage-description">Multi-channel output serving different stakeholders across the agency and client ecosystem</p>
+                    <div class="outputs-grid">
+                        <div class="output-card">
+                            <div class="output-title">Client Campaign Assets</div>
+                            <div class="output-description">Ready-to-use creative materials for immediate deployment</div>
+                        </div>
+                        <div class="output-card">
+                            <div class="output-title">Agency Intelligence</div>
+                            <div class="output-description">Daily hive briefings for internal teams and trend awareness</div>
+                        </div>
+                        <div class="output-card">
+                            <div class="output-title">Strategic Insights</div>
+                            <div class="output-description">Cultural moment analysis and opportunity recommendations</div>
+                        </div>
+                        <div class="output-card">
+                            <div class="output-title">Performance Data</div>
+                            <div class="output-description">Real-time metrics and campaign effectiveness tracking</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px; padding: 25px; background: #f8f9fa; border-radius: 0; text-align: left; border: 1px solid #e9ecef;">
+            <strong style="color: #212529; font-size: 1.1em;">Success Metrics:</strong> 
+            <span style="color: #6c757d; margin-left: 10px;">Speed to market, creative quality assessment, engagement performance, trend prediction accuracy, client satisfaction</span>
+        </div>
+    </div>
+</body>
+</html>

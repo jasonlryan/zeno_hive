@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideation - AI Hive System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="zeno-logo">ZENO</span>
+                <span class="logo-text">AI HIVE</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Documentation</a>
+                <a href="#" class="nav-active">System Areas</a>
+                <a href="#" onclick="toggleCommentMode()">💬 Comment Mode</a>
+                <a href="#" onclick="showTeamModal()">👥 Team</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>System Areas</h3>
+                <nav class="sidebar-nav">
+                    <a href="detection.html">📡 Detection</a>
+                    <a href="ideation.html" class="nav-active">🧠 Ideation</a>
+                    <a href="creation.html">✨ Creation</a>
+                    <a href="distribution.html">🚀 Distribution</a>
+                </nav>
+            </div>
+            <div class="sidebar-section">
+                <h3>Quick Links</h3>
+                <nav class="sidebar-nav">
+                    <a href="index.html">← Back to Docs</a>
+                    <a href="#process-definition">Process Definition</a>
+                    <a href="#ai-components">AI Components</a>
+                    <a href="#human-workflow">Human Workflow</a>
+                    <a href="#success-metrics">Success Metrics</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>🧠 Intelligence & Ideation Engine</h1>
+                <p class="subtitle">AI-powered analysis combining trend data with brand knowledge to generate relevant creative concepts</p>
+                <div class="status-badge">Phase 2 of 4</div>
+                <div class="human-loop-badge">👤 Human in Loop</div>
+            </div>
+
+            <section id="process-definition" class="content-section">
+                <h2>Process Definition</h2>
+                <div class="process-overview">
+                    <p>The Ideation phase transforms detected cultural moments into strategic creative opportunities through AI-powered analysis and human creative oversight. This phase combines multiple AI models trained on brand voice and historical performance with human creative judgment to generate compelling campaign concepts that authentically connect brands with cultural moments.</p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Moment Analysis</h3>
+                            <p>Deep AI analysis of cultural moment context, audience engagement patterns, and brand alignment opportunities using connected GPTs.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Relevance Scoring</h3>
+                            <p>Multi-factor assessment of brand-moment fit including audience overlap, brand safety, authenticity potential, and competitive landscape.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Creative Concept Generation</h3>
+                            <p>AI-generated campaign ideas with strategic rationale, message frameworks, and creative direction tailored to brand voice and guidelines.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Human Review & Refinement</h3>
+                            <p>Creative team evaluation, concept refinement, and approval process with feedback loop to AI models for continuous improvement.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ai-components" class="content-section">
+                <h2>AI Components & Tools</h2>
+                <div class="data-grid">
+                    <div class="data-source-card primary">
+                        <h3>Connected GPTs</h3>
+                        <div class="source-type">Custom AI Models</div>
+                        <p>Brand-specific AI models trained on voice guidelines, historical campaigns, and performance data to generate on-brand creative concepts.</p>
+                        <div class="capabilities">
+                            <span class="capability">Brand voice consistency</span>
+                            <span class="capability">Historical learning</span>
+                            <span class="capability">Concept generation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="data-source-card">
+                        <h3>Synthetic Personas</h3>
+                        <div class="source-type">Audience Intelligence</div>
+                        <p>AI-powered audience personas that provide insights into target demographic preferences, behaviors, and cultural moment engagement patterns.</p>
+                        <div class="capabilities">
+                            <span class="capability">Audience simulation</span>
+                            <span class="capability">Preference modeling</span>
+                            <span class="capability">Engagement prediction</span>
+                        </div>
+                    </div>
+
+                    <div class="data-source-card">
+                        <h3>TikTok Insights Beta</h3>
+                        <div class="source-type">Platform Intelligence</div>
+                        <p>Advanced TikTok trend analysis and creative format optimization for platform-specific campaign development and content strategy.</p>
+                        <div class="capabilities">
+                            <span class="capability">Trend analysis</span>
+                            <span class="capability">Format optimization</span>
+                            <span class="capability">Creator insights</span>
+                        </div>
+                    </div>
+
+                    <div class="data-source-card">
+                        <h3>Message Testing Engine</h3>
+                        <div class="source-type">Performance Prediction</div>
+                        <p>AI analysis of historical campaign data to predict message performance and optimize creative concepts before production.</p>
+                        <div class="capabilities">
+                            <span class="capability">Performance prediction</span>
+                            <span class="capability">A/B optimization</span>
+                            <span class="capability">Risk assessment</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="human-workflow" class="content-section">
+                <h2>Human-in-Loop Workflow</h2>
+                <div class="workflow-container">
+                    <div class="workflow-card human-focus">
+                        <h3>Creative Review Process</h3>
+                        <p>Structured human oversight where creative teams evaluate AI-generated concepts for authenticity, brand alignment, and cultural sensitivity before advancement to creation phase.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> AI-generated concepts, relevance scores
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Creative evaluation, cultural sensitivity check
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Approved concepts with refinements
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Collaborative Refinement</h3>
+                        <p>Interactive process where human feedback directly improves AI output through real-time concept iteration and strategic direction adjustment.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Initial concepts, human feedback
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Iterative refinement, strategic alignment
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Optimized creative concepts
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Campaign Plan Development</h3>
+                        <p>Expansion of approved concepts into comprehensive campaign plans including channel strategy, timeline, and success metrics definition.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Approved concepts, brand objectives
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Strategic planning, channel mapping
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Comprehensive campaign plans
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="human-loop-benefits">
+                    <h3>Human Oversight Benefits</h3>
+                    <ul>
+                        <li><strong>Cultural Sensitivity:</strong> Human judgment ensures authentic and respectful cultural moment engagement</li>
+                        <li><strong>Brand Authenticity:</strong> Creative teams validate that AI concepts truly reflect brand values and voice</li>
+                        <li><strong>Strategic Alignment:</strong> Human oversight ensures concepts support broader business objectives</li>
+                        <li><strong>Risk Mitigation:</strong> Creative professionals identify potential brand safety or reputation risks</li>
+                        <li><strong>Innovation Balance:</strong> Combination of AI efficiency with human creativity and intuition</li>
+                        <li><strong>Continuous Learning:</strong> Human feedback improves AI model performance over time</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- <section id="success-metrics" class="content-section">
+                <h2>Success Metrics & KPIs</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">90%+</div>
+                        <div class="metric-label">Concept Approval Rate</div>
+                        <p>Percentage of AI-generated concepts that pass human review and advance to creation phase with minimal revisions.</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">< 4hrs</div>
+                        <div class="metric-label">Ideation Cycle Time</div>
+                        <p>Average time from cultural moment detection to approved creative concept ready for asset creation.</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">85%+</div>
+                        <div class="metric-label">Brand Voice Consistency</div>
+                        <p>Human evaluation score for AI-generated concepts maintaining authentic brand voice and guidelines.</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">3:1</div>
+                        <div class="metric-label">Concept Efficiency Ratio</div>
+                        <p>Number of viable concepts generated per cultural moment compared to traditional brainstorming methods.</p>
+                    </div>
+                </div>
+
+                <div class="metrics-details">
+                    <h3>Ideation Quality Indicators</h3>
+                    <ul>
+                        <li><strong>Relevance Score:</strong> AI assessment of brand-moment alignment and opportunity potential</li>
+                        <li><strong>Authenticity Rating:</strong> Human evaluation of concept authenticity and cultural appropriateness</li>
+                        <li><strong>Innovation Index:</strong> Measure of creative uniqueness compared to competitive responses</li>
+                        <li><strong>Performance Prediction:</strong> AI-generated likelihood of campaign success based on historical data</li>
+                        <li><strong>Cross-Channel Adaptability:</strong> Concept flexibility across different marketing channels and formats</li>
+                        <li><strong>Speed to Market Potential:</strong> Assessment of concept complexity and production timeline requirements</li>
+                    </ul>
+                </div>
+            </section> -->
+
+            <div class="collaboration-bar">
+                <button class="collab-btn" onclick="addComment('ideation')">💬 Add Comment</button>
+                <button class="collab-btn" onclick="suggestEdit('ideation')">✏️ Suggest Edit</button>
+                <button class="collab-btn" onclick="flagForReview('ideation')">🏁 Flag for Review</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Comment Mode Overlay -->
+    <div id="comment-overlay" class="comment-overlay">
+        <div class="comment-instructions">
+            Click anywhere on the page to add a comment
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="comment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('comment-modal')">&times;</span>
+            <h3>Add Comment</h3>
+            <textarea id="comment-text" placeholder="Enter your comment or suggestion..."></textarea>
+            <div class="modal-actions">
+                <button onclick="saveComment()">Save Comment</button>
+                <button onclick="closeModal('comment-modal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="team-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('team-modal')">&times;</span>
+            <h3>Team Collaboration</h3>
+            <div class="team-section">
+                <h4>Active Contributors</h4>
+                <div class="team-list">
+                    <div class="team-member">👤 Jason Ryan (Product Lead)</div>
+                    <div class="team-member">👤 Creative Team Lead</div>
+                    <div class="team-member">👤 Technical Lead</div>
+                </div>
+            </div>
+            <div class="team-section">
+                <h4>Recent Activity</h4>
+                <div class="activity-feed">
+                    <div class="activity-item">Comment added to Human workflow</div>
+                    <div class="activity-item">Edit suggested for AI components</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

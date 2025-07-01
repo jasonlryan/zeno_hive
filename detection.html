@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection - AI Hive System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="zeno-logo">ZENO</span>
+                <span class="logo-text">AI HIVE</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Documentation</a>
+                <a href="#" class="nav-active">System Areas</a>
+                <a href="#" onclick="toggleCommentMode()">💬 Comment Mode</a>
+                <a href="#" onclick="showTeamModal()">👥 Team</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>System Areas</h3>
+                <nav class="sidebar-nav">
+                    <a href="detection.html" class="nav-active">📡 Detection</a>
+                    <a href="ideation.html">🧠 Ideation</a>
+                    <a href="creation.html">✨ Creation</a>
+                    <a href="distribution.html">🚀 Distribution</a>
+                </nav>
+            </div>
+            <div class="sidebar-section">
+                <h3>Quick Links</h3>
+                <nav class="sidebar-nav">
+                    <a href="index.html">← Back to Docs</a>
+                    <a href="#process-definition">Process Definition</a>
+                    <a href="#data-sources">Data Sources</a>
+                    <a href="#workflows">Workflows</a>
+                    <a href="#success-metrics">Success Metrics</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>📡 Signal Detection & Listening</h1>
+                <p class="subtitle">Always-on monitoring across digital channels to identify emerging cultural moments and trends</p>
+                <div class="status-badge">Phase 1 of 4</div>
+            </div>
+
+            <section id="process-definition" class="content-section">
+                <h2>Process Definition</h2>
+                <div class="process-overview">
+                    <p>The Detection phase serves as the foundation of the AI Hive system, continuously scanning the digital landscape to identify emerging cultural moments that could be relevant for brand engagement. This always-on monitoring system combines multiple data sources and AI analysis to distinguish between fleeting trends and meaningful cultural shifts with staying power.</p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Continuous Monitoring</h3>
+                            <p>24/7 scanning across social platforms, news sources, podcasts, and cultural touchpoints using Peak Metrics API and custom monitoring tools.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Signal Analysis</h3>
+                            <p>AI-powered analysis of engagement patterns, velocity metrics, and cultural context to identify potential moments of interest.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Trend Classification</h3>
+                            <p>Categorization of detected signals based on longevity predictions, audience alignment, and brand relevance potential.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Alert Generation</h3>
+                            <p>Automated notifications to the Ideation phase when significant cultural moments are detected that match client parameters.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="data-sources" class="content-section">
+                <h2>Data Sources & Monitoring</h2>
+                <div class="data-grid">
+                    <div class="data-source-card primary">
+                        <h3>Peak Metrics API</h3>
+                        <div class="source-type">Primary Data Source</div>
+                        <p>Social velocity tracking, engagement metrics, trend trajectory analysis, and virality indicators across major platforms.</p>
+                        <div class="capabilities">
+                            <span class="capability">Real-time velocity</span>
+                            <span class="capability">Engagement patterns</span>
+                            <span class="capability">Trend prediction</span>
+                        </div>
+                    </div>
+                    
+                    <div class="data-source-card">
+                        <h3>Talkwalker Augmentation</h3>
+                        <div class="source-type">Supporting Platform</div>
+                        <p>Enhanced social listening and sentiment analysis to complement Peak Metrics with broader cultural context.</p>
+                        <div class="capabilities">
+                            <span class="capability">Sentiment analysis</span>
+                            <span class="capability">Image recognition</span>
+                            <span class="capability">Influencer tracking</span>
+                        </div>
+                    </div>
+
+                    <div class="data-source-card">
+                        <h3>Multi-Platform Monitoring</h3>
+                        <div class="source-type">Extended Reach</div>
+                        <p>Discord communities, Substack newsletters, forums, and niche platforms for comprehensive cultural moment detection.</p>
+                        <div class="capabilities">
+                            <span class="capability">Discord tracking</span>
+                            <span class="capability">Newsletter monitoring</span>
+                            <span class="capability">Forum analysis</span>
+                        </div>
+                    </div>
+
+                    <div class="data-source-card">
+                        <h3>Audio/Video Intelligence</h3>
+                        <div class="source-type">Rich Media</div>
+                        <p>Podcast monitoring, TikTok audio trend detection, and video content analysis for emerging cultural signals.</p>
+                        <div class="capabilities">
+                            <span class="capability">Audio trends</span>
+                            <span class="capability">Video analysis</span>
+                            <span class="capability">Meme tracking</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="workflows" class="content-section">
+                <h2>Detection Workflows</h2>
+                <div class="workflow-container">
+                    <div class="workflow-card">
+                        <h3>Brand vs Cultural Moment Detection</h3>
+                        <p>Automated differentiation between brand-specific mentions and broader cultural phenomena to focus on moments with organic cultural relevance rather than paid brand activity.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Raw social signals, engagement data
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> AI classification, context analysis
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Categorized cultural moments
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Client-Specific Filtering</h3>
+                        <p>Custom brand intelligence layer that programs detection parameters based on client guidelines, audience demographics, and category-specific opportunities.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Cultural moments, brand parameters
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Relevance scoring, audience alignment
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Brand-relevant opportunities
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Continuous Learning Loop</h3>
+                        <p>Feedback mechanism that learns from successful campaign outcomes to improve future detection accuracy and reduce false positives.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Campaign performance data
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Pattern analysis, model refinement
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Improved detection parameters
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <section id="success-metrics" class="content-section">
+                <h2>Success Metrics & KPIs</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">95%+</div>
+                        <div class="metric-label">Detection Accuracy</div>
+                        <p>Percentage of identified cultural moments that prove to have genuine staying power and engagement potential.</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">< 2hrs</div>
+                        <div class="metric-label">Signal Response Time</div>
+                        <p>Average time from cultural moment emergence to system detection and alert generation.</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">80%+</div>
+                        <div class="metric-label">Brand Relevance Score</div>
+                        <p>Percentage of detected moments that score high for client brand alignment and opportunity potential.</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">< 5%</div>
+                        <div class="metric-label">False Positive Rate</div>
+                        <p>Percentage of detected signals that fail to develop into meaningful cultural moments or brand opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="metrics-details">
+                    <h3>Key Performance Indicators</h3>
+                    <ul>
+                        <li><strong>Share Velocity:</strong> Rate of content sharing and spread across platforms</li>
+                        <li><strong>Engagement Trajectory:</strong> Pattern of audience interaction over time</li>
+                        <li><strong>Virality Indicators:</strong> Signals suggesting potential for widespread adoption</li>
+                        <li><strong>Longevity Predictions:</strong> AI assessment of moment staying power</li>
+                        <li><strong>Cross-Platform Presence:</strong> Breadth of cultural moment across different channels</li>
+                        <li><strong>Audience Alignment:</strong> Match between moment participants and client target demographics</li>
+                    </ul>
+                </div>
+            </section> -->
+
+            <div class="collaboration-bar">
+                <button class="collab-btn" onclick="addComment('detection')">💬 Add Comment</button>
+                <button class="collab-btn" onclick="suggestEdit('detection')">✏️ Suggest Edit</button>
+                <button class="collab-btn" onclick="flagForReview('detection')">🏁 Flag for Review</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Comment Mode Overlay -->
+    <div id="comment-overlay" class="comment-overlay">
+        <div class="comment-instructions">
+            Click anywhere on the page to add a comment
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="comment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('comment-modal')">&times;</span>
+            <h3>Add Comment</h3>
+            <textarea id="comment-text" placeholder="Enter your comment or suggestion..."></textarea>
+            <div class="modal-actions">
+                <button onclick="saveComment()">Save Comment</button>
+                <button onclick="closeModal('comment-modal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="team-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('team-modal')">&times;</span>
+            <h3>Team Collaboration</h3>
+            <div class="team-section">
+                <h4>Active Contributors</h4>
+                <div class="team-list">
+                    <div class="team-member">👤 Jason Ryan (Product Lead)</div>
+                    <div class="team-member">👤 Creative Team Lead</div>
+                    <div class="team-member">👤 Technical Lead</div>
+                </div>
+            </div>
+            <div class="team-section">
+                <h4>Recent Activity</h4>
+                <div class="activity-feed">
+                    <div class="activity-item">Comment added to Detection workflow</div>
+                    <div class="activity-item">Edit suggested for data sources</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

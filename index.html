@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIVE 3.0 Specification Workspace</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="zeno-logo">ZENO</div>
+                <div class="hive-title">🐝 HIVE 3.0 Specification Workspace</div>
+            </div>
+            <div class="header-actions">
+                <button class="btn-secondary" onclick="toggleCommentMode()">💬 Comment Mode</button>
+                <button class="btn-primary" onclick="showTeamFeedback()">👥 Team Feedback</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Search documentation..." onkeyup="searchDocs()">
+            </div>
+            
+            <div class="nav-section">
+                <h3>📋 Documentation</h3>
+                <ul class="nav-list">
+                    <li><a href="#" onclick="loadContent('overview')" class="nav-link active">📖 Project Overview</a></li>
+                    <li><a href="#" onclick="loadContent('prd')" class="nav-link">📄 Product Requirements (PRD)</a></li>
+                    <li><a href="#" onclick="loadContent('functional-spec')" class="nav-link">🔧 Functional Specification</a></li>
+                    <li><a href="#" onclick="loadContent('integration')" class="nav-link">🔗 Integration Requirements</a></li>
+                    <li><a href="#" onclick="loadContent('technical')" class="nav-link">⚙️ Technical Addendum</a></li>
+                    <li><a href="#" onclick="loadContent('ui-spec')" class="nav-link">🎨 UI Specification</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <h3>🏗️ System Areas</h3>
+                <ul class="nav-list">
+                    <li><a href="detection.html" class="nav-link">📡 Detection & Listening</a></li>
+                    <li><a href="ideation.html" class="nav-link">🧠 Intelligence & Ideation</a></li>
+                    <li><a href="creation.html" class="nav-link">✨ Creative Generation</a></li>
+                    <li><a href="distribution.html" class="nav-link">🚀 Distribution & Analytics</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <h3>👥 Collaboration</h3>
+                <ul class="nav-list">
+                    <li><a href="#" onclick="showTeamActivity()" class="nav-link">📈 Team Activity</a></li>
+                    <li><a href="#" onclick="showDecisions()" class="nav-link">✅ Decisions Made</a></li>
+                    <li><a href="#" onclick="showDiscussions()" class="nav-link">💬 Active Discussions</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div id="contentArea">
+                <!-- Project Overview (Default Content) -->
+                <div class="content-header">
+                    <h1>🐝 HIVE 3.0 Specification Workspace</h1>
+                    <p class="subtitle">Collaborative platform for defining the Cultural Moment Marketing System</p>
+                </div>
+
+                <div class="overview-cards">
+                    <div class="card">
+                        <h3>📋 Documentation Status</h3>
+                        <div class="status-item">
+                            <span class="status-label">PRD:</span>
+                            <span class="status-complete">✅ Complete</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Functional Spec:</span>
+                            <span class="status-complete">✅ Complete</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Integration Req:</span>
+                            <span class="status-complete">✅ Complete</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Technical Addendum:</span>
+                            <span class="status-complete">✅ Complete</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">UI Specification:</span>
+                            <span class="status-complete">✅ Complete</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>🏗️ System Architecture</h3>
+                        <div class="architecture-flow">
+                            <div class="flow-step">📡 Detection</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">🧠 Ideation</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">✨ Creation</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">🚀 Distribution</div>
+                        </div>
+                        <p>End-to-end cultural moment marketing pipeline</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>👥 Team Collaboration</h3>
+                        <div class="team-stats">
+                            <div class="stat">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Comments</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Suggestions</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Decisions</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary" onclick="toggleCommentMode()">Start Collaborating</button>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h2>🚀 Quick Start</h2>
+                    <div class="action-grid">
+                        <div class="action-card" onclick="loadContent('prd')">
+                            <h4>📄 Review PRD</h4>
+                            <p>Understand business objectives and requirements</p>
+                        </div>
+                        <div class="action-card" onclick="loadContent('functional-spec')">
+                            <h4>🔧 Technical Details</h4>
+                            <p>Dive into system architecture and specifications</p>
+                        </div>
+                        <div class="action-card" onclick="window.location.href='detection.html'">
+                            <h4>📡 Detection Process</h4>
+                            <p>Explore how we'll identify cultural moments</p>
+                        </div>
+                        <div class="action-card" onclick="toggleCommentMode()">
+                            <h4>💬 Add Feedback</h4>
+                            <p>Share your thoughts and suggestions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar (Table of Contents + Comments) -->
+        <aside class="right-sidebar">
+            <div class="toc-section">
+                <h3>📋 Contents</h3>
+                <div id="tableOfContents">
+                    <ul>
+                        <li><a href="#overview">Project Overview</a></li>
+                        <li><a href="#documentation">Documentation Status</a></li>
+                        <li><a href="#architecture">System Architecture</a></li>
+                        <li><a href="#collaboration">Team Collaboration</a></li>
+                        <li><a href="#quick-start">Quick Start</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="comments-section">
+                <h3>💬 Comments <span class="comment-count">(0)</span></h3>
+                <div id="commentsContainer">
+                    <div class="no-comments">
+                        <p>No comments yet. Enable comment mode to start discussing!</p>
+                        <button class="btn-secondary small" onclick="toggleCommentMode()">Enable Comments</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Comment Modal -->
+    <div id="commentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>💬 Add Comment</h3>
+                <button class="close-btn" onclick="closeCommentModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="user-info">
+                    <input type="text" id="commentAuthor" placeholder="Your name (required)" required>
+                    <input type="email" id="commentEmail" placeholder="Email (optional)">
+                </div>
+                <textarea id="commentText" placeholder="Share your thoughts, suggestions, or questions..."></textarea>
+                <div class="comment-options">
+                    <select id="commentType">
+                        <option value="comment">💬 Comment</option>
+                        <option value="suggestion">✏️ Suggestion</option>
+                        <option value="question">❓ Question</option>
+                        <option value="idea">💡 New Idea</option>
+                    </select>
+                    <select id="commentPriority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeCommentModal()">Cancel</button>
+                <button class="btn-primary" onclick="submitComment()">Add Comment</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Activity Modal -->
+    <div id="teamModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>👥 Team Activity & Feedback</h3>
+                <button class="close-btn" onclick="closeTeamModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="teamActivityContent">
+                    <div class="activity-tabs">
+                        <button class="tab-btn active" onclick="showTab('recent')">Recent Activity</button>
+                        <button class="tab-btn" onclick="showTab('comments')">All Comments</button>
+                        <button class="tab-btn" onclick="showTab('decisions')">Decisions</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="recentTab" class="tab-pane active">
+                            <p class="empty-state">No recent activity. Start by adding comments to begin collaboration!</p>
+                        </div>
+                        <div id="commentsTab" class="tab-pane">
+                            <p class="empty-state">No comments yet. Enable comment mode and click anywhere to add feedback.</p>
+                        </div>
+                        <div id="decisionsTab" class="tab-pane">
+                            <p class="empty-state">No decisions recorded yet. Decisions will appear here as the team reaches consensus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
