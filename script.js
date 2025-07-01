@@ -1051,15 +1051,103 @@ function removeCommentableElements() {
 function handleCommentClick(event) {
   if (commentMode) {
     event.preventDefault();
-    const target = event.target.getAttribute("data-comment-target");
-    showCommentModal(target);
+
+    // Get the clicked element and its context
+    const clickedElement = event.target;
+    const target = clickedElement.getAttribute("data-comment-target");
+    const context = getCommentContext(clickedElement);
+
+    showCommentModal(target, context);
   }
 }
 
-function showCommentModal(target) {
+function getCommentContext(element) {
+  // Get the text content and type of what's being commented on
+  let contextText = "";
+  let contextType = "";
+
+  // Check if it's a heading
+  if (element.tagName && element.tagName.match(/^H[1-6]$/)) {
+    contextType = "heading";
+    contextText = element.textContent.trim();
+  }
+  // Check if it's in a paragraph
+  else if (element.closest("p")) {
+    contextType = "paragraph";
+    const paragraph = element.closest("p");
+    contextText =
+      paragraph.textContent.trim().substring(0, 150) +
+      (paragraph.textContent.length > 150 ? "..." : "");
+  }
+  // Check if it's in a list item
+  else if (element.closest("li")) {
+    contextType = "list item";
+    const listItem = element.closest("li");
+    contextText =
+      listItem.textContent.trim().substring(0, 100) +
+      (listItem.textContent.length > 100 ? "..." : "");
+  }
+  // Check if it's in a code block
+  else if (element.closest("code") || element.closest("pre")) {
+    contextType = "code";
+    const codeElement = element.closest("code") || element.closest("pre");
+    contextText = codeElement.textContent.trim().substring(0, 80) + "...";
+  }
+  // Check if it's in a blockquote
+  else if (element.closest("blockquote")) {
+    contextType = "quote";
+    const quote = element.closest("blockquote");
+    contextText = quote.textContent.trim().substring(0, 100) + "...";
+  }
+  // Default to general text
+  else {
+    contextType = "section";
+    contextText = element.textContent
+      ? element.textContent.trim().substring(0, 100) + "..."
+      : `Comment on ${currentSection}`;
+  }
+
+  return {
+    type: contextType,
+    text: contextText,
+    section: currentSection,
+  };
+}
+
+function showCommentModal(target, context = null, parentCommentId = null) {
   const modal = document.getElementById("commentModal");
   modal.style.display = "block";
   modal.setAttribute("data-target", target);
+
+  // Store context and parent comment info
+  if (context) {
+    modal.setAttribute("data-context", JSON.stringify(context));
+  }
+  if (parentCommentId) {
+    modal.setAttribute("data-parent-id", parentCommentId);
+  }
+
+  // Show context in modal if available
+  const contextDisplay = document.getElementById("commentContext");
+  if (context && contextDisplay) {
+    contextDisplay.innerHTML = `
+      <div class="comment-context">
+        <span class="context-type">${context.type}</span>
+        <span class="context-text">"${context.text}"</span>
+      </div>
+    `;
+    contextDisplay.style.display = "block";
+  } else if (contextDisplay) {
+    contextDisplay.style.display = "none";
+  }
+
+  // Update modal title for replies
+  const modalTitle = modal.querySelector(".modal-header h3");
+  if (parentCommentId) {
+    modalTitle.textContent = "Reply to Comment";
+  } else {
+    modalTitle.textContent = "Add Comment";
+  }
 
   // Pre-populate user info if previously entered
   const savedAuthor = localStorage.getItem("commentAuthor");
@@ -1086,6 +1174,23 @@ function closeCommentModal() {
   const modal = document.getElementById("commentModal");
   modal.style.display = "none";
   document.getElementById("commentText").value = "";
+
+  // Clear context and parent comment data
+  modal.removeAttribute("data-context");
+  modal.removeAttribute("data-parent-id");
+
+  // Hide context display
+  const contextDisplay = document.getElementById("commentContext");
+  if (contextDisplay) {
+    contextDisplay.style.display = "none";
+  }
+
+  // Reset modal title
+  const modalTitle = modal.querySelector(".modal-header h3");
+  if (modalTitle) {
+    modalTitle.textContent = "💬 Add Comment";
+  }
+
   // Don't clear author/email as we want to remember them
 }
 
@@ -1108,6 +1213,10 @@ async function submitComment() {
     return;
   }
 
+  // Get context and parent comment info from modal
+  const contextData = modal.getAttribute("data-context");
+  const parentCommentId = modal.getAttribute("data-parent-id");
+
   const comment = {
     id: Date.now(),
     target: target,
@@ -1118,6 +1227,9 @@ async function submitComment() {
     timestamp: new Date().toISOString(),
     author: author,
     email: email || null,
+    context: contextData ? JSON.parse(contextData) : null,
+    parentId: parentCommentId || null,
+    replies: [],
   };
 
   // Save comment to Redis (both local dev with vercel dev and production)
@@ -1176,6 +1288,9 @@ function loadCommentsForSection(section) {
           ? "medium-priority"
           : "low-priority";
       const typeClass = comment.type || "comment";
+      // Skip replies - they'll be shown under their parent comments
+      if (comment.parentId) return;
+
       commentsHTML += `
                 <div class="comment ${priorityClass} ${typeClass}">
                     <div class="comment-header">
@@ -1183,12 +1298,27 @@ function loadCommentsForSection(section) {
                         <span class="comment-time">${formatTime(
                           comment.timestamp
                         )}</span>
-                        <button class="delete-comment-btn" onclick="deleteComment('${
-                          comment.id
-                        }', '${
+                        <div class="comment-actions">
+                            <button class="reply-comment-btn" onclick="replyToComment('${
+                              comment.id
+                            }')" title="Reply to comment">↩</button>
+                            <button class="delete-comment-btn" onclick="deleteComment('${
+                              comment.id
+                            }', '${
         comment.section
       }')" title="Delete comment">×</button>
+                        </div>
                     </div>
+                    ${
+                      comment.context
+                        ? `
+                    <div class="comment-context">
+                        <span class="context-type">${comment.context.type}:</span>
+                        <span class="context-text">"${comment.context.text}"</span>
+                    </div>
+                    `
+                        : ""
+                    }
                     <div class="comment-body">${comment.text}</div>
                     <div class="comment-meta">
                         <span class="comment-type">${
@@ -1198,6 +1328,7 @@ function loadCommentsForSection(section) {
                           comment.priority || "medium"
                         } priority</span>
                     </div>
+                    ${getRepliesHTML(comment.id, sectionComments)}
                 </div>
             `;
     });
@@ -1217,6 +1348,58 @@ function updateCommentCount() {
   if (statNumber && currentSection === "overview") {
     statNumber.textContent = count;
   }
+}
+
+function getRepliesHTML(parentId, allComments) {
+  const replies = allComments.filter((comment) => comment.parentId == parentId);
+  if (replies.length === 0) return "";
+
+  let repliesHTML = '<div class="comment-replies">';
+  replies.forEach((reply) => {
+    const priorityClass =
+      reply.priority === "high"
+        ? "high-priority"
+        : reply.priority === "medium"
+        ? "medium-priority"
+        : "low-priority";
+    const typeClass = reply.type || "comment";
+
+    repliesHTML += `
+      <div class="comment reply ${priorityClass} ${typeClass}">
+        <div class="comment-header">
+          <strong>${reply.author}</strong>
+          <span class="comment-time">${formatTime(reply.timestamp)}</span>
+          <button class="delete-comment-btn" onclick="deleteComment('${
+            reply.id
+          }', '${reply.section}')" title="Delete reply">×</button>
+        </div>
+        <div class="comment-body">${reply.text}</div>
+        <div class="comment-meta">
+          <span class="comment-type">${reply.type || "comment"}</span>
+          <span class="comment-priority">${
+            reply.priority || "medium"
+          } priority</span>
+        </div>
+      </div>
+    `;
+  });
+  repliesHTML += "</div>";
+  return repliesHTML;
+}
+
+function replyToComment(commentId) {
+  const comment = comments.find((c) => c.id == commentId);
+  if (!comment) return;
+
+  // Create a context for the reply
+  const replyContext = {
+    type: "reply",
+    text: `Replying to ${comment.author}: "${comment.text.substring(0, 100)}${
+      comment.text.length > 100 ? "..." : ""
+    }"`,
+  };
+
+  showCommentModal(comment.target, replyContext, commentId);
 }
 
 function formatTime(timestamp) {
