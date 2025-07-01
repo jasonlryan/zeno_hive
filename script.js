@@ -1029,8 +1029,18 @@ function toggleCommentMode() {
 }
 
 function makeContentCommentable() {
-  const content = document.getElementById("contentArea");
-  const elements = content.querySelectorAll("h1, h2, h3, h4, p, ul, ol, pre");
+  // Try to find content area - either main platform contentArea or system page main element
+  const content =
+    document.getElementById("contentArea") || document.querySelector("main");
+
+  if (!content) {
+    console.warn("No content area found for commenting");
+    return;
+  }
+
+  const elements = content.querySelectorAll(
+    "h1, h2, h3, h4, p, ul, ol, pre, .workflow-step, .data-source, .metric"
+  );
 
   elements.forEach((element, index) => {
     element.classList.add("commentable");
@@ -1547,9 +1557,17 @@ window.onclick = function (event) {
 
 // Initialize
 document.addEventListener("DOMContentLoaded", function () {
-  loadContent("overview");
-  updateCommentCount();
-  loadExistingComments();
+  // Check if we're on a system area page (has currentSection set)
+  if (window.currentSection) {
+    currentSection = window.currentSection;
+    loadExistingComments();
+    updateCommentCount();
+  } else {
+    // Main platform initialization
+    loadContent("overview");
+    updateCommentCount();
+    loadExistingComments();
+  }
 });
 
 // Delete a comment
