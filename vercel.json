@@ -1,5 +1,4 @@
 {
-  "runtime": "nodejs18.x",
   "functions": {
     "api/comments.js": {
       "runtime": "@vercel/node@3.0.7"
