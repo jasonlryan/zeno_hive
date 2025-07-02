@@ -1,0 +1,32 @@
+User-agent: *
+Disallow: /
+
+# Block all search engines from indexing this site
+# This is a private workspace for HIVE 3.0 specifications
+
+# Block specific bots
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: facebookexternalhit
+Disallow: /
+
+User-agent: Twitterbot
+Disallow: /
+
+# No sitemap provided intentionally 
