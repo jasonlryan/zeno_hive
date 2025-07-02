@@ -1,0 +1,10 @@
+{
+  "name": "zeno_hive",
+  "version": "1.0.0",
+  "engines": {
+    "node": "18.x"
+  },
+  "scripts": {
+    "build": "echo 'No build step required for static site'"
+  }
+} 
