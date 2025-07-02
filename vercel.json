@@ -4,6 +4,7 @@
       "runtime": "@vercel/node@3.2.17"
     }
   },
+  "nodeVersion": "20.x",
   "rewrites": [
     {
       "source": "/api/comments",
