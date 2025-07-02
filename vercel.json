@@ -1,10 +1,9 @@
 {
   "functions": {
     "api/comments.js": {
-      "runtime": "@vercel/node@3.2.17"
+      "runtime": "@vercel/node"
     }
   },
-  "nodeVersion": "20.x",
   "rewrites": [
     {
       "source": "/api/comments",
