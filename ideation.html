@@ -257,31 +257,33 @@
 
         </main>
 
-        <!-- Right Sidebar (Table of Contents + Comments) -->
-        <aside class="right-sidebar">
-            <div class="toc-section">
-                <h3>📋 Contents</h3>
-                <div id="tableOfContents">
-                    <ul>
-                        <li><a href="#process-definition">Process Definition</a></li>
-                        <li><a href="#ai-components">AI Components</a></li>
-                        <li><a href="#human-workflows">Human Workflows</a></li>
-                        <li><a href="#success-metrics">Success Metrics</a></li>
-                    </ul>
-                </div>
+        <!-- Dedicated Comments Panel -->
+        <aside class="comments-panel">
+            <div class="comments-panel-header">
+                <h3>
+                    💬 Comments & Feedback
+                    <span class="comment-count">(0)</span>
+                </h3>
             </div>
-
-            <div class="comments-section">
-                <h3>💬 Comments <span class="comment-count">(0)</span></h3>
+            <div class="comments-panel-body">
+                <button class="add-comment-btn" onclick="toggleCommentMode()">
+                    ✏️ Add Comment to Page
+                </button>
+                
                 <div id="commentsContainer">
                     <div class="no-comments">
-                        <p>No comments yet. Enable comment mode to start discussing!</p>
-                        <button class="btn-secondary small" onclick="toggleCommentMode()">Enable Comments</button>
+                        <p>No comments yet on this section.</p>
+                        <p>Enable comment mode and click anywhere on the page to start discussing the Intelligence & Ideation process!</p>
                     </div>
                 </div>
             </div>
         </aside>
     </div>
+
+    <!-- Comment Toggle Button (Mobile) -->
+    <button class="comment-toggle-btn" onclick="toggleCommentsPanel()" title="Toggle Comments">
+        💬
+    </button>
 
     <!-- Comment Mode Overlay -->
     <div id="comment-overlay" class="comment-overlay">

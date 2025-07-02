@@ -1639,3 +1639,19 @@ async function loadExistingComments() {
     console.log("No existing comments or server not available:", error);
   }
 }
+
+// Toggle comments panel for mobile
+function toggleCommentsPanel() {
+  const panel = document.querySelector(".comments-panel");
+  const toggleBtn = document.querySelector(".comment-toggle-btn");
+
+  if (panel.classList.contains("comments-panel-collapsed")) {
+    panel.classList.remove("comments-panel-collapsed");
+    panel.classList.add("comments-panel-expanded");
+    toggleBtn.textContent = "✕";
+  } else {
+    panel.classList.add("comments-panel-collapsed");
+    panel.classList.remove("comments-panel-expanded");
+    toggleBtn.textContent = "💬";
+  }
+}
