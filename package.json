@@ -1,17 +1,9 @@
 {
-  "name": "zeno-hive-v0-workspace",
+  "name": "zeno-hive-workspace",
   "version": "1.0.0",
-  "description": "HIVE 3.0 V0 Specification Workspace - Team Collaboration Platform",
-  "scripts": {
-    "start": "python -m http.server 8000",
-    "dev": "python -m http.server 8000",
-    "deploy": "vercel --prod"
-  },
+  "description": "HIVE 3.0 Specification Workspace - Team Collaboration Platform",
   "dependencies": {
     "@upstash/redis": "^1.28.2"
-  },
-  "devDependencies": {
-    "vercel": "^32.0.0"
   },
   "engines": {
     "node": ">=18.0.0"
