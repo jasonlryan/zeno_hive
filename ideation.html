@@ -25,7 +25,18 @@
     <div class="layout">
         <aside class="sidebar">
             <div class="sidebar-section">
-                <h3>System Areas</h3>
+                <h3>📋 Documentation</h3>
+                <nav class="sidebar-nav">
+                    <a href="index.html">📖 Project Overview</a>
+                    <a href="index.html#prd">📄 Product Requirements (PRD)</a>
+                    <a href="index.html#functional-spec">🔧 Functional Specification</a>
+                    <a href="index.html#integration">🔗 Integration Requirements</a>
+                    <a href="index.html#technical">⚙️ Technical Addendum</a>
+                    <a href="index.html#ui-spec">🎨 UI Specification</a>
+                </nav>
+            </div>
+            <div class="sidebar-section">
+                <h3>🏗️ System Areas</h3>
                 <nav class="sidebar-nav">
                     <a href="detection.html">📡 Detection</a>
                     <a href="ideation.html" class="nav-active">🧠 Ideation</a>
@@ -246,8 +257,20 @@
 
         </main>
 
-        <!-- Right Sidebar (Comments) -->
+        <!-- Right Sidebar (Table of Contents + Comments) -->
         <aside class="right-sidebar">
+            <div class="toc-section">
+                <h3>📋 Contents</h3>
+                <div id="tableOfContents">
+                    <ul>
+                        <li><a href="#process-definition">Process Definition</a></li>
+                        <li><a href="#ai-components">AI Components</a></li>
+                        <li><a href="#human-workflows">Human Workflows</a></li>
+                        <li><a href="#success-metrics">Success Metrics</a></li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="comments-section">
                 <h3>💬 Comments <span class="comment-count">(0)</span></h3>
                 <div id="commentsContainer">

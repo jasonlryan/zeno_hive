@@ -1347,16 +1347,20 @@ function loadCommentsForSection(section) {
 }
 
 function updateCommentCount() {
-  const count = comments.length;
+  // Filter comments for current section only
+  const sectionComments = comments.filter(
+    (comment) => comment.section === currentSection
+  );
+  const count = sectionComments.length;
   const countElement = document.querySelector(".comment-count");
   if (countElement) {
     countElement.textContent = `(${count})`;
   }
 
-  // Update stats on overview page
+  // Update stats on overview page - show total comments
   const statNumber = document.querySelector(".stat-number");
   if (statNumber && currentSection === "overview") {
-    statNumber.textContent = count;
+    statNumber.textContent = comments.length; // Show total for overview
   }
 }
 
@@ -1607,15 +1611,29 @@ async function deleteComment(commentId, section) {
 // Load existing comments from Redis
 async function loadExistingComments() {
   try {
-    const response = await fetch("/api/comments");
+    // Load section-specific comments if we're on a specific section page
+    const url =
+      currentSection && currentSection !== "overview"
+        ? `/api/comments?section=${currentSection}`
+        : "/api/comments";
+
+    const response = await fetch(url);
     if (response.ok) {
       const existingComments = await response.json();
+
+      // Clear existing comments array and reload
+      comments.length = 0;
       comments.push(...existingComments);
+
       updateCommentCount();
       if (currentSection) {
         loadCommentsForSection(currentSection);
       }
-      console.log(`Loaded ${existingComments.length} comments from Redis`);
+      console.log(
+        `Loaded ${existingComments.length} comments from Redis for section: ${
+          currentSection || "all"
+        }`
+      );
     }
   } catch (error) {
     console.log("No existing comments or server not available:", error);
