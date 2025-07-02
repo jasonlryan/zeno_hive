@@ -1611,17 +1611,14 @@ async function deleteComment(commentId, section) {
 // Load existing comments from Redis
 async function loadExistingComments() {
   try {
-    // Load section-specific comments if we're on a specific section page
-    const url =
-      currentSection && currentSection !== "overview"
-        ? `/api/comments?section=${currentSection}`
-        : "/api/comments";
+    // Always load section-specific comments for proper filtering
+    const url = `/api/comments?section=${currentSection}`;
 
     const response = await fetch(url);
     if (response.ok) {
       const existingComments = await response.json();
 
-      // Clear existing comments array and reload
+      // Clear existing comments array and reload with section-specific comments
       comments.length = 0;
       comments.push(...existingComments);
 
@@ -1630,9 +1627,7 @@ async function loadExistingComments() {
         loadCommentsForSection(currentSection);
       }
       console.log(
-        `Loaded ${existingComments.length} comments from Redis for section: ${
-          currentSection || "all"
-        }`
+        `Loaded ${existingComments.length} comments from Redis for section: ${currentSection}`
       );
     }
   } catch (error) {

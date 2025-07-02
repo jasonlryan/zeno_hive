@@ -50,6 +50,10 @@ export default async function handler(req, res) {
           "integration",
           "technical",
           "ui-spec",
+          "detection",
+          "ideation",
+          "creation",
+          "distribution",
         ];
         const allComments = [];
 
