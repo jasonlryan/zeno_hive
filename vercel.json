@@ -2,6 +2,9 @@
   "functions": {
     "api/comments.js": {
       "runtime": "@vercel/node@3.0.7"
+    },
+    "api/**/*": {
+      "runtime": "@vercel/node@3.0.7"
     }
   },
   "rewrites": [
@@ -44,6 +47,6 @@
         }
       ]
     }
-  ],
+      ],
   "outputDirectory": "."
 } 
