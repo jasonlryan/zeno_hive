@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Publishing Workflows - HIVE 3.0</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <script src="../auth.js"></script>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="zeno-logo">ZENO</span>
+                <span class="logo-text">AI HIVE</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Documentation</a>
+                <a href="#" class="nav-active">Workflow Specs</a>
+                <a href="#" onclick="toggleCommentMode()">💬 Comment Mode</a>
+                <a href="#" onclick="showTeamActivity()">👥 Team</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>📋 Documentation</h3>
+                <nav class="sidebar-nav">
+                    <a href="../index.html">📖 Project Overview</a>
+                    <a href="../index.html#prd">📄 Product Requirements (PRD)</a>
+                    <a href="../index.html#functional-spec">🔧 Functional Specification</a>
+                    <a href="../index.html#integration">🔗 Integration Requirements</a>
+                    <a href="../index.html#technical">⚙️ Technical Addendum</a>
+                    <a href="../index.html#ui-spec">🎨 UI Specification</a>
+                </nav>
+            </div>
+            <div class="sidebar-section">
+                <h3>🏗️ System Areas</h3>
+                <nav class="sidebar-nav">
+                    <a href="../detection.html">📡 Detection</a>
+                    <a href="../ideation.html">🧠 Ideation</a>
+                    <a href="../creation.html">✨ Creation</a>
+                    <a href="../distribution.html" class="nav-active">🚀 Distribution</a>
+                </nav>
+            </div>
+            <div class="sidebar-section">
+                <h3>🔄 Workflow Specs</h3>
+                <nav class="sidebar-nav">
+                    <a href="index.html">📋 All Workflows</a>
+                    <a href="#process-definition">Process Definition</a>
+                    <a href="#platform-integrations">Platform Integrations</a>
+                    <a href="#deployment-automation">Deployment Automation</a>
+                    <a href="#quality-assurance">Quality Assurance</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>🚀 Automated Publishing Workflows</h1>
+                <p class="subtitle">Direct integration with publishing platforms and client systems for seamless asset deployment with scheduling and optimization capabilities</p>
+                <div class="status-badge">Distribution Phase</div>
+            </div>
+
+            <section id="process-definition" class="content-section">
+                <h2>Workflow Definition</h2>
+                <div class="process-overview">
+                    <p>The Automated Publishing Workflows system handles the final deployment of approved creative assets across multiple platforms and channels. This system integrates directly with social media platforms, advertising networks, client systems, and content management platforms to ensure seamless, scheduled deployment with optimization capabilities and real-time monitoring.</p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Asset Preparation</h3>
+                            <p>Final preparation and formatting of approved assets for specific platform requirements including metadata, tags, and compliance verification.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Platform Integration</h3>
+                            <p>Direct API connections to publishing platforms including social media, advertising networks, and client content management systems.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Scheduled Deployment</h3>
+                            <p>Automated publishing based on optimal timing algorithms, client schedules, and platform-specific best practices for maximum engagement.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Deployment Monitoring</h3>
+                            <p>Real-time monitoring of publishing status, error handling, and immediate performance tracking with automated notifications.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="platform-integrations" class="content-section">
+                <h2>Platform Integration Capabilities</h2>
+                <div class="data-grid">
+                    <div class="data-source-card primary">
+                        <h3>Social Media Platforms</h3>
+                        <div class="source-type">Direct API Integration</div>
+                        <p>Native integration with major social media platforms for automated posting with optimal timing and engagement optimization.</p>
+                        <div class="capabilities">
+                            <span class="capability">Facebook/Instagram</span>
+                            <span class="capability">Twitter/X</span>
+                            <span class="capability">LinkedIn</span>
+                            <span class="capability">TikTok</span>
+                        </div>
+                    </div>
+                    
+                    <div class="data-source-card">
+                        <h3>Advertising Networks</h3>
+                        <div class="source-type">Campaign Deployment</div>
+                        <p>Direct integration with advertising platforms for campaign deployment, budget management, and performance optimization.</p>
+                        <div class="capabilities">
+                            <span class="capability">Google Ads</span>
+                            <span class="capability">Facebook Ads</span>
+                            <span class="capability">LinkedIn Ads</span>
+                            <span class="capability">Display Networks</span>
+                        </div>
+                    </div>
+
+                    <div class="data-source-card">
+                        <h3>Client Systems</h3>
+                        <div class="source-type">CMS Integration</div>
+                        <p>Direct connection to client content management systems, DAM platforms, and brand portals for asset distribution.</p>
+                        <div class="capabilities">
+                            <span class="capability">WordPress</span>
+                            <span class="capability">Drupal</span>
+                            <span class="capability">Custom CMS</span>
+                            <span class="capability">DAM Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="data-source-card">
+                        <h3>Email & Marketing</h3>
+                        <div class="source-type">Marketing Automation</div>
+                        <p>Integration with email marketing platforms and marketing automation tools for comprehensive campaign deployment.</p>
+                        <div class="capabilities">
+                            <span class="capability">Mailchimp</span>
+                            <span class="capability">HubSpot</span>
+                            <span class="capability">Marketo</span>
+                            <span class="capability">Salesforce</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="deployment-automation" class="content-section">
+                <h2>Deployment Automation Features</h2>
+                <div class="workflow-container">
+                    <div class="workflow-card">
+                        <h3>Intelligent Scheduling</h3>
+                        <p>AI-powered optimal timing analysis based on audience behavior, platform algorithms, and historical performance data.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Audience data, platform insights
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Timing optimization, schedule generation
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Optimal publishing schedule
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Multi-Platform Coordination</h3>
+                        <p>Coordinated deployment across multiple platforms with cross-platform messaging consistency and timing optimization.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Platform strategies, asset variants
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Cross-platform coordination, timing sync
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Synchronized campaign deployment
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Error Handling & Recovery</h3>
+                        <p>Automated error detection, retry mechanisms, and alternative deployment paths to ensure successful asset distribution.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Publishing status, error logs
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Error analysis, retry logic, fallback
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Successful deployment or alerts
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Performance Tracking</h3>
+                        <p>Real-time monitoring of deployment success, initial engagement metrics, and automated performance reporting.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Platform analytics, engagement data
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Metrics collection, analysis
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Performance dashboards, reports
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quality-assurance" class="content-section">
+                <h2>Quality Assurance & Compliance</h2>
+                <div class="automation-benefits">
+                    <h3>Publishing Quality Controls</h3>
+                    <ul>
+                        <li><strong>Asset Verification:</strong> Automated checks for file integrity, format compliance, and metadata accuracy</li>
+                        <li><strong>Platform Compliance:</strong> Verification of platform-specific requirements and content policies</li>
+                        <li><strong>Brand Guidelines:</strong> Final compliance check against brand standards and messaging guidelines</li>
+                        <li><strong>Legal Compliance:</strong> Automated verification of legal requirements and regulatory compliance</li>
+                        <li><strong>Performance Validation:</strong> Pre-deployment testing and optimization verification</li>
+                        <li><strong>Deployment Confirmation:</strong> Real-time validation of successful publishing and immediate issue detection</li>
+                    </ul>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">< 5min</div>
+                        <div class="metric-label">Deployment Time</div>
+                        <p>Average time from approval to live deployment across all platforms</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">99.5%</div>
+                        <div class="metric-label">Success Rate</div>
+                        <p>Successful deployment rate with automated error handling and recovery</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">50+</div>
+                        <div class="metric-label">Platform Connections</div>
+                        <p>Integrated publishing platforms and channels for comprehensive coverage</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">24/7</div>
+                        <div class="metric-label">Monitoring</div>
+                        <p>Continuous monitoring and real-time status updates</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Dedicated Comments Panel -->
+        <aside class="comments-panel">
+            <div class="comments-panel-header">
+                <h3>
+                    💬 Comments & Feedback
+                    <span class="comment-count">(0)</span>
+                </h3>
+            </div>
+            <div class="comments-panel-body">
+                <button class="add-comment-btn" onclick="toggleCommentMode()">
+                    ✏️ Add Comment to Page
+                </button>
+                
+                <div id="commentsContainer">
+                    <div class="no-comments">
+                        <p>No comments yet on this workflow.</p>
+                        <p>Enable comment mode and click anywhere on the page to start discussing the Automated Publishing Workflows!</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Comment Toggle Button (Mobile) -->
+    <button class="comment-toggle-btn" onclick="toggleCommentsPanel()" title="Toggle Comments">
+        💬
+    </button>
+
+    <!-- Comment Mode Overlay -->
+    <div id="comment-overlay" class="comment-overlay">
+        <div class="comment-instructions">
+            Click anywhere on the page to add a comment
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="comment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('comment-modal')">&times;</span>
+            <h3>Add Comment</h3>
+            <textarea id="comment-text" placeholder="Enter your comment or suggestion..."></textarea>
+            <div class="modal-actions">
+                <button onclick="saveComment()">Save Comment</button>
+                <button onclick="closeModal('comment-modal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="team-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('team-modal')">&times;</span>
+            <h3>Team Collaboration</h3>
+            <div class="team-section">
+                <h4>Active Contributors</h4>
+                <div class="team-list">
+                    <div class="team-member">👤 Jason Ryan (Product Lead)</div>
+                    <div class="team-member">👤 Creative Team Lead</div>
+                    <div class="team-member">👤 Technical Lead</div>
+                </div>
+            </div>
+            <div class="team-section">
+                <h4>Recent Activity</h4>
+                <div class="activity-feed">
+                    <div class="activity-item">Comment added to deployment automation</div>
+                    <div class="activity-item">Edit suggested for platform integrations</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comment Modal -->
+    <div id="commentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>💬 Add Comment</h3>
+                <button class="close-btn" onclick="closeCommentModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="commentContext" class="comment-context-display" style="display: none;"></div>
+                <div class="user-info">
+                    <input type="text" id="commentAuthor" placeholder="Your name (required)" required>
+                    <input type="email" id="commentEmail" placeholder="Email (optional)">
+                </div>
+                <textarea id="commentText" placeholder="Share your thoughts, suggestions, or questions..."></textarea>
+                <div class="comment-options">
+                    <select id="commentType">
+                        <option value="comment">💬 Comment</option>
+                        <option value="suggestion">✏️ Suggestion</option>
+                        <option value="question">❓ Question</option>
+                        <option value="idea">💡 New Idea</option>
+                    </select>
+                    <select id="commentPriority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeCommentModal()">Cancel</button>
+                <button class="btn-primary" onclick="submitComment()">Add Comment</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Activity Modal -->
+    <div id="teamModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>👥 Team Activity & Feedback</h3>
+                <button class="close-btn" onclick="closeTeamModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="teamActivityContent">
+                    <div class="activity-tabs">
+                        <button class="tab-btn active" onclick="showTab('recent')">Recent Activity</button>
+                        <button class="tab-btn" onclick="showTab('comments')">All Comments</button>
+                        <button class="tab-btn" onclick="showTab('decisions')">Decisions</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="recentTab" class="tab-pane active">
+                            <p class="empty-state">No recent activity. Start by adding comments to begin collaboration!</p>
+                        </div>
+                        <div id="commentsTab" class="tab-pane">
+                            <p class="empty-state">No comments yet. Enable comment mode and click anywhere to add feedback.</p>
+                        </div>
+                        <div id="decisionsTab" class="tab-pane">
+                            <p class="empty-state">No decisions recorded yet. Decisions will appear here as the team reaches consensus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set the current section for this page
+        window.currentSection = 'automated-publishing-workflows';
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html> 

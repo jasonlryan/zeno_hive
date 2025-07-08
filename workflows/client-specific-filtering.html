@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client-Specific Filtering Workflow - HIVE 3.0</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <script src="../auth.js"></script>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="zeno-logo">ZENO</span>
+                <span class="logo-text">AI HIVE</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Documentation</a>
+                <a href="#" class="nav-active">Workflow Specs</a>
+                <a href="#" onclick="toggleCommentMode()">💬 Comment Mode</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>🔄 Ideation Workflows</h3>
+                <nav class="sidebar-nav">
+                    <a href="../ideation.html">← Back to Ideation</a>
+                    <a href="ai-creative-ideation.html">AI Creative Ideation</a>
+                    <a href="brand-relevance-scoring.html">Brand Relevance Scoring</a>
+                    <a href="client-specific-filtering.html" class="nav-active">Client-Specific Filtering</a>
+                    <a href="collaborative-refinement.html">Collaborative Refinement</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>🎯 Client-Specific Filtering Workflow</h1>
+                <p class="subtitle">Intelligent filtering system that customizes cultural moment detection and creative concepts based on individual client brand guidelines and strategic priorities</p>
+                <div class="status-badge">Brand Intelligence Layer</div>
+            </div>
+
+            <section class="content-section">
+                <h2>Client-Specific Filter Profiles</h2>
+                <div class="client-profiles">
+                    <div class="client-profile aldi">
+                        <h3>🛒 Aldi Brand Filter Profile</h3>
+                        <div class="profile-details">
+                            <div class="profile-section">
+                                <h4>Brand Personality Filters</h4>
+                                <div class="filter-criteria">
+                                    <span class="criteria high-priority">Value and affordability focus</span>
+                                    <span class="criteria high-priority">Family-oriented and practical</span>
+                                    <span class="criteria medium-priority">Quality without compromise</span>
+                                    <span class="criteria medium-priority">Sustainability and responsibility</span>
+                                </div>
+                            </div>
+                            <div class="profile-section">
+                                <h4>Cultural Moment Preferences</h4>
+                                <ul>
+                                    <li><strong>High Relevance:</strong> Family moments, budget-conscious trends, practical life</li>
+                                    <li><strong>Medium Relevance:</strong> Sustainability culture, community support, food trends</li>
+                                    <li><strong>Low Relevance:</strong> Luxury lifestyle, high-fashion, premium positioning</li>
+                                </ul>
+                            </div>
+                            <div class="profile-section">
+                                <h4>Risk Tolerance & Guidelines</h4>
+                                <div class="risk-settings">
+                                    <div class="risk-item">
+                                        <span class="risk-label">Cultural Participation:</span>
+                                        <span class="risk-level medium">Medium - Family and community-focused engagement</span>
+                                    </div>
+                                    <div class="risk-item">
+                                        <span class="risk-label">Social Issues:</span>
+                                        <span class="risk-level low">Low - Avoid controversial social positions</span>
+                                    </div>
+                                    <div class="risk-item">
+                                        <span class="risk-label">Controversy:</span>
+                                        <span class="risk-level very-low">Very Low - Maximum brand safety priority</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="client-profile pilgrims">
+                        <h3>🍗 Pilgrims Brand Filter Profile</h3>
+                        <div class="profile-details">
+                            <div class="profile-section">
+                                <h4>Brand Personality Filters</h4>
+                                <div class="filter-criteria">
+                                    <span class="criteria high-priority">Food safety and quality assurance</span>
+                                    <span class="criteria high-priority">B2B professional relationships</span>
+                                    <span class="criteria medium-priority">Supply chain transparency</span>
+                                    <span class="criteria medium-priority">Industry leadership and expertise</span>
+                                </div>
+                            </div>
+                            <div class="profile-section">
+                                <h4>Cultural Moment Preferences</h4>
+                                <ul>
+                                    <li><strong>High Relevance:</strong> Food safety awareness, industry innovation, B2B trends</li>
+                                    <li><strong>Medium Relevance:</strong> Sustainability practices, supply chain transparency</li>
+                                    <li><strong>Low Relevance:</strong> Consumer lifestyle trends, entertainment culture</li>
+                                </ul>
+                            </div>
+                            <div class="profile-section">
+                                <h4>Risk Tolerance & Guidelines</h4>
+                                <div class="risk-settings">
+                                    <div class="risk-item">
+                                        <span class="risk-label">Cultural Participation:</span>
+                                        <span class="risk-level low">Low - Professional industry engagement only</span>
+                                    </div>
+                                    <div class="risk-item">
+                                        <span class="risk-label">Social Issues:</span>
+                                        <span class="risk-level very-low">Very Low - Avoid social commentary</span>
+                                    </div>
+                                    <div class="risk-item">
+                                        <span class="risk-label">Controversy:</span>
+                                        <span class="risk-level minimal">Minimal - Maximum regulatory compliance</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Filtering Process Flow</h2>
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Cultural Moment Ingestion</h3>
+                            <p>Detected cultural moments are received with context, sentiment, audience data, and trend velocity metrics for client-specific evaluation.</p>
+                            <div class="automation-details">
+                                <span class="automation-tag">Automated</span>
+                                <p>Moment data parsing + context extraction</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Brand Alignment Analysis</h3>
+                            <p><strong>Brand Personality Analyzer</strong> evaluates cultural moments against client brand personality, values, positioning, and strategic objectives.</p>
+                            <div class="automation-details">
+                                <span class="automation-tag">Brand AI</span>
+                                <p>Personality matching + values alignment scoring</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Risk Assessment Evaluation</h3>
+                            <p><strong>Risk Assessment Filter</strong> analyzes potential brand safety, reputational, and strategic risks based on client-specific risk tolerance settings.</p>
+                            <div class="automation-details">
+                                <span class="automation-tag">Risk AI</span>
+                                <p>Risk evaluation + safety compliance checking</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Relevance Scoring</h3>
+                            <p>Multi-factor scoring combines brand alignment, audience overlap, cultural authenticity, and strategic value to generate client-specific relevance scores.</p>
+                            <div class="automation-details">
+                                <span class="automation-tag">Scoring AI</span>
+                                <p>Multi-factor analysis + weighted scoring</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Filtered Delivery</h3>
+                            <p>High-scoring, client-relevant cultural moments are delivered to ideation phase with brand-specific context and strategic recommendations.</p>
+                            <div class="automation-details">
+                                <span class="automation-tag">Delivery AI</span>
+                                <p>Client routing + context packaging</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Filtering Criteria Framework</h2>
+                <div class="criteria-framework">
+                    <div class="criteria-category brand-alignment">
+                        <h3>🎯 Brand Alignment Criteria</h3>
+                        <div class="criteria-details">
+                            <div class="criteria-item">
+                                <h4>Brand Personality Match</h4>
+                                <p>Evaluation of cultural moment alignment with brand archetype, personality traits, and communication style</p>
+                                <div class="scoring-weights">
+                                    <span class="weight nike">Nike: 25%</span>
+                                    <span class="weight aldi">Aldi: 30%</span>
+                                    <span class="weight pilgrims">Pilgrims: 35%</span>
+                                </div>
+                            </div>
+                            <div class="criteria-item">
+                                <h4>Values Consistency</h4>
+                                <p>Assessment of cultural moment values alignment with brand core beliefs and social positioning</p>
+                                <div class="scoring-weights">
+                                    <span class="weight nike">Nike: 20%</span>
+                                    <span class="weight aldi">Aldi: 25%</span>
+                                    <span class="weight pilgrims">Pilgrims: 30%</span>
+                                </div>
+                            </div>
+                            <div class="criteria-item">
+                                <h4>Strategic Relevance</h4>
+                                <p>Analysis of how cultural moment supports current brand strategy and business objectives</p>
+                                <div class="scoring-weights">
+                                    <span class="weight nike">Nike: 20%</span>
+                                    <span class="weight aldi">Aldi: 20%</span>
+                                    <span class="weight pilgrims">Pilgrims: 25%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="criteria-category audience-alignment">
+                        <h3>👥 Audience Alignment Criteria</h3>
+                        <div class="criteria-details">
+                            <div class="criteria-item">
+                                <h4>Demographic Overlap</h4>
+                                <p>Measurement of target audience overlap between cultural moment participants and brand customers</p>
+                                <div class="overlap-analysis">
+                                    <div class="overlap-metric">
+                                        <span class="metric-label">Age Range Alignment:</span>
+                                        <span class="metric-importance">High Importance</span>
+                                    </div>
+                                    <div class="overlap-metric">
+                                        <span class="metric-label">Geographic Relevance:</span>
+                                        <span class="metric-importance">Medium Importance</span>
+                                    </div>
+                                    <div class="overlap-metric">
+                                        <span class="metric-label">Interest Intersection:</span>
+                                        <span class="metric-importance">High Importance</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="criteria-item">
+                                <h4>Cultural Affinity</h4>
+                                <p>Evaluation of brand audience cultural preferences and engagement patterns with similar moments</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="criteria-category risk-assessment">
+                        <h3>⚠️ Risk Assessment Criteria</h3>
+                        <div class="criteria-details">
+                            <div class="criteria-item">
+                                <h4>Brand Safety Evaluation</h4>
+                                <p>Comprehensive assessment of potential brand safety risks and reputation impact</p>
+                                <div class="risk-factors">
+                                    <span class="risk-factor high">Content appropriateness</span>
+                                    <span class="risk-factor high">Association risks</span>
+                                    <span class="risk-factor medium">Controversy potential</span>
+                                    <span class="risk-factor medium">Cultural sensitivity</span>
+                                </div>
+                            </div>
+                            <div class="criteria-item">
+                                <h4>Regulatory Compliance</h4>
+                                <p>Industry-specific regulatory requirements and legal compliance considerations</p>
+                                <div class="compliance-areas">
+                                    <div class="compliance-area">
+                                        <span class="area-label">Nike:</span>
+                                        <span class="area-focus">Athlete endorsement, performance claims</span>
+                                    </div>
+                                    <div class="compliance-area">
+                                        <span class="area-label">Aldi:</span>
+                                        <span class="area-focus">Food labeling, pricing accuracy</span>
+                                    </div>
+                                    <div class="compliance-area">
+                                        <span class="area-label">Pilgrims:</span>
+                                        <span class="area-focus">FDA/USDA regulations, food safety</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Dynamic Filter Adjustment</h2>
+                <div class="filter-adjustment">
+                    <div class="adjustment-category seasonal">
+                        <h3>📅 Seasonal & Campaign Adjustments</h3>
+                        <div class="adjustment-details">
+                            <p>Filter criteria automatically adjust based on seasonal priorities, active campaigns, and strategic initiatives</p>
+                            <div class="adjustment-examples">
+                                <div class="adjustment-example">
+                                    <h4>Nike Q4 Holiday Campaign</h4>
+                                    <div class="adjustment-changes">
+                                        <span class="change increase">+ Gift-giving culture moments</span>
+                                        <span class="change increase">+ Family fitness trends</span>
+                                        <span class="change decrease">- Individual performance focus</span>
+                                    </div>
+                                </div>
+                                <div class="adjustment-example">
+                                    <h4>Aldi Back-to-School Period</h4>
+                                    <div class="adjustment-changes">
+                                        <span class="change increase">+ Family budget planning</span>
+                                        <span class="change increase">+ School lunch trends</span>
+                                        <span class="change decrease">- Premium lifestyle content</span>
+                                    </div>
+                                </div>
+                                <div class="adjustment-example">
+                                    <h4>Pilgrims Food Safety Week</h4>
+                                    <div class="adjustment-changes">
+                                        <span class="change increase">+ Food safety awareness</span>
+                                        <span class="change increase">+ Industry education trends</span>
+                                        <span class="change decrease">- Consumer lifestyle content</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="adjustment-category competitive">
+                        <h3>🏢 Competitive Response Adjustments</h3>
+                        <div class="adjustment-details">
+                            <p>Filter sensitivity adjusts based on competitive activity and market positioning opportunities</p>
+                            <div class="competitive-scenarios">
+                                <div class="scenario">
+                                    <h4>Competitor Cultural Participation</h4>
+                                    <p>When competitors engage with cultural moments, filters adjust to identify differentiation opportunities</p>
+                                </div>
+                                <div class="scenario">
+                                    <h4>Market Gap Identification</h4>
+                                    <p>Filters prioritize cultural moments where competitors are absent or poorly positioned</p>
+                                </div>
+                                <div class="scenario">
+                                    <h4>Response Speed Optimization</h4>
+                                    <p>Filter urgency adjusts based on competitive response timing and first-mover advantages</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Learning & Optimization System</h2>
+                <div class="learning-system">
+                    <div class="learning-input">
+                        <h3>📊 Client Performance Feedback</h3>
+                        <ul>
+                            <li>Campaign success rates by cultural moment type and brand alignment score</li>
+                            <li>Client approval patterns and feedback on filtered opportunities</li>
+                            <li>Audience response correlation with filter predictions</li>
+                            <li>Risk assessment accuracy and brand safety outcomes</li>
+                        </ul>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="learning-process">
+                        <h3>🧠 Filter Algorithm Refinement</h3>
+                        <ul>
+                            <li>Client preference pattern recognition and filter weight optimization</li>
+                            <li>Risk tolerance calibration based on client comfort levels</li>
+                            <li>Brand alignment criteria refinement for higher relevance scores</li>
+                            <li>Seasonal and competitive adjustment algorithm improvement</li>
+                        </ul>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="learning-output">
+                        <h3>🎯 Enhanced Client Targeting</h3>
+                        <ul>
+                            <li>Higher relevance accuracy and reduced false positives</li>
+                            <li>Better client satisfaction with filtered opportunities</li>
+                            <li>Improved campaign success rates from cultural moment participation</li>
+                            <li>More efficient resource allocation and creative development</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Success Metrics & KPIs</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>Relevance Accuracy</h3>
+                        <div class="metric-value">90%+</div>
+                        <p>Client-approved cultural moments vs. total filtered opportunities</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Filter Processing Speed</h3>
+                        <div class="metric-value">< 5 sec</div>
+                        <p>Time to evaluate and score cultural moment relevance</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>False Positive Rate</h3>
+                        <div class="metric-value">< 10%</div>
+                        <p>Irrelevant opportunities filtered through to clients</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Client Satisfaction</h3>
+                        <div class="metric-value">85%+</div>
+                        <p>Client satisfaction with filtered opportunity quality</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="comments-panel">
+            <div class="comments-panel-header">
+                <h3>💬 Filtering Comments <span class="comment-count">(0)</span></h3>
+            </div>
+            <div class="comments-panel-body">
+                <button class="add-comment-btn" onclick="toggleCommentMode()">✏️ Add Filter Note</button>
+                <div id="commentsContainer">
+                    <div class="no-comments">
+                        <p>No filtering comments yet. Add insights about client-specific filtering and brand intelligence.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        window.currentSection = 'client-specific-filtering';
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html>

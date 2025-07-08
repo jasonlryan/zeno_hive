@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Metrics API Integration - HIVE 3.0</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <script src="../auth.js"></script>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="zeno-logo">ZENO</span>
+                <span class="logo-text">AI HIVE</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Documentation</a>
+                <a href="#" class="nav-active">Workflow Specs</a>
+                <a href="#" onclick="toggleCommentMode()">💬 Comment Mode</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>🔄 Workflow Specifications</h3>
+                <nav class="sidebar-nav">
+                    <a href="../detection.html">← Back to Detection</a>
+                    <a href="peak-metrics-integration.html" class="nav-active">Peak Metrics API</a>
+                    <a href="brand-cultural-detection.html">Brand vs Cultural Detection</a>
+                    <a href="human-review-process.html">Human Review Process</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>📊 Peak Metrics API Integration</h1>
+                <p class="subtitle">Core data source for velocity, engagement metrics, and trend trajectory analysis</p>
+                <div class="status-badge">Technical Specification</div>
+            </div>
+
+            <section class="content-section">
+                <h2>API Specification</h2>
+                <div class="workflow-card">
+                    <h3>Data Sources & Endpoints</h3>
+                    <p>Peak Metrics provides enhanced social velocity data beyond TalkWalker limitations, including threads, TikTok, and Discord data.</p>
+                    
+                    <div class="api-details">
+                        <h4>Primary Endpoints</h4>
+                        <ul>
+                            <li><strong>Velocity Tracking:</strong> Real-time share velocity and engagement patterns</li>
+                            <li><strong>Trend Trajectory:</strong> Predictive analysis of trend staying power</li>
+                            <li><strong>Cross-Platform Metrics:</strong> Unified data from TikTok, Discord, Reddit, Twitter</li>
+                            <li><strong>Virality Indicators:</strong> Early signals for potential viral content</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Implementation Requirements</h2>
+                <div class="data-grid">
+                    <div class="data-source-card primary">
+                        <h3>MVP Configuration</h3>
+                        <div class="source-type">Single Data Source</div>
+                        <p>Peak Metrics API confirmed as the only data source for MVP, replacing TalkWalker limitations.</p>
+                        <div class="capabilities">
+                            <span class="capability">Real-time velocity</span>
+                            <span class="capability">Engagement metrics</span>
+                            <span class="capability">Trend prediction</span>
+                        </div>
+                    </div>
+                    
+                    <div class="data-source-card">
+                        <h3>Brand Filtering Logic</h3>
+                        <div class="source-type">Cultural vs Brand Detection</div>
+                        <p>Distinguish between organic cultural moments and brand-specific mentions for authentic engagement opportunities.</p>
+                        <div class="capabilities">
+                            <span class="capability">Organic moment detection</span>
+                            <span class="capability">Brand mention filtering</span>
+                            <span class="capability">Authenticity scoring</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Integration Workflow</h2>
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Data Ingestion</h3>
+                            <p>Continuous API polling for velocity metrics, engagement data, and trend signals across monitored platforms.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Signal Processing</h3>
+                            <p>AI analysis to distinguish cultural moments from brand mentions and score relevance for client brands.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Alert Generation</h3>
+                            <p>Automated notifications to ideation phase when significant cultural moments match client parameters.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="comments-panel">
+            <div class="comments-panel-header">
+                <h3>💬 Technical Comments <span class="comment-count">(0)</span></h3>
+            </div>
+            <div class="comments-panel-body">
+                <button class="add-comment-btn" onclick="toggleCommentMode()">✏️ Add Technical Note</button>
+                <div id="commentsContainer">
+                    <div class="no-comments">
+                        <p>No technical comments yet. Add implementation notes and API specifications.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        window.currentSection = 'peak-metrics-integration';
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html> 

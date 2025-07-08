@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Refinement Workflow - HIVE 3.0</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <script src="../auth.js"></script>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="zeno-logo">ZENO</span>
+                <span class="logo-text">AI HIVE</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Documentation</a>
+                <a href="#" class="nav-active">Workflow Specs</a>
+                <a href="#" onclick="toggleCommentMode()">💬 Comment Mode</a>
+                <a href="#" onclick="showTeamActivity()">👥 Team</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>📋 Documentation</h3>
+                <nav class="sidebar-nav">
+                    <a href="../index.html">📖 Project Overview</a>
+                    <a href="../index.html#prd">📄 Product Requirements (PRD)</a>
+                    <a href="../index.html#functional-spec">🔧 Functional Specification</a>
+                    <a href="../index.html#integration">🔗 Integration Requirements</a>
+                    <a href="../index.html#technical">⚙️ Technical Addendum</a>
+                    <a href="../index.html#ui-spec">🎨 UI Specification</a>
+                </nav>
+            </div>
+            <div class="sidebar-section">
+                <h3>🏗️ System Areas</h3>
+                <nav class="sidebar-nav">
+                    <a href="../detection.html">📡 Detection</a>
+                    <a href="../ideation.html" class="nav-active">🧠 Ideation</a>
+                    <a href="../creation.html">✨ Creation</a>
+                    <a href="../distribution.html">🚀 Distribution</a>
+                </nav>
+            </div>
+            <div class="sidebar-section">
+                <h3>🔄 Workflow Specs</h3>
+                <nav class="sidebar-nav">
+                    <a href="index.html">📋 All Workflows</a>
+                    <a href="#process-definition">Process Definition</a>
+                    <a href="#collaboration-framework">Collaboration Framework</a>
+                    <a href="#refinement-tools">Refinement Tools</a>
+                    <a href="#iteration-management">Iteration Management</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>🤝 Collaborative Refinement Workflow</h1>
+                <p class="subtitle">Interactive process where human feedback directly improves AI output through real-time concept iteration and strategic direction adjustment</p>
+                <div class="status-badge">Ideation Phase</div>
+                <div class="human-loop-badge">Human-in-Loop</div>
+            </div>
+
+            <section id="process-definition" class="content-section">
+                <h2>Workflow Definition</h2>
+                <div class="process-overview">
+                    <p>The Collaborative Refinement workflow enables real-time iterative improvement of AI-generated concepts through structured human feedback. This process allows creative teams to guide AI output toward optimal solutions while maintaining creative control and ensuring alignment with strategic objectives and brand requirements.</p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Initial Concept Presentation</h3>
+                            <p>AI-generated concepts are presented to human reviewers with contextual information, relevance scoring, and initial strategic recommendations.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Human Feedback Capture</h3>
+                            <p>Structured collection of human insights including creative direction, strategic adjustments, and specific improvement suggestions.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Real-time AI Iteration</h3>
+                            <p>AI system immediately incorporates human feedback to generate refined concepts, maintaining creative momentum and collaboration flow.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Convergence & Optimization</h3>
+                            <p>Iterative refinement continues until concepts achieve optimal balance of creativity, strategic alignment, and execution feasibility.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="collaboration-framework" class="content-section">
+                <h2>Human-AI Collaboration Framework</h2>
+                <div class="data-grid">
+                    <div class="data-source-card primary">
+                        <h3>Structured Feedback Interface</h3>
+                        <div class="source-type">Interactive Tools</div>
+                        <p>Intuitive interface for providing specific, actionable feedback on AI-generated concepts with visual annotation and semantic tagging capabilities.</p>
+                        <div class="capabilities">
+                            <span class="capability">Visual Annotations</span>
+                            <span class="capability">Semantic Tags</span>
+                            <span class="capability">Priority Scoring</span>
+                            <span class="capability">Context Notes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="data-source-card">
+                        <h3>Real-time Collaboration</h3>
+                        <div class="source-type">Live Iteration</div>
+                        <p>Simultaneous multi-user collaboration with real-time concept updates, allowing teams to work together on concept refinement.</p>
+                        <div class="capabilities">
+                            <span class="capability">Multi-user Support</span>
+                            <span class="capability">Live Updates</span>
+                            <span class="capability">Version Control</span>
+                            <span class="capability">Conflict Resolution</span>
+                        </div>
+                    </div>
+
+                    <div class="data-source-card">
+                        <h3>Strategic Alignment Tools</h3>
+                        <div class="source-type">Brand Consistency</div>
+                        <p>Automated checking and guidance for brand alignment, strategic objectives, and campaign goals throughout the refinement process.</p>
+                        <div class="capabilities">
+                            <span class="capability">Brand Guidelines</span>
+                            <span class="capability">Strategic Objectives</span>
+                            <span class="capability">Campaign Goals</span>
+                            <span class="capability">Compliance Checks</span>
+                        </div>
+                    </div>
+
+                    <div class="data-source-card">
+                        <h3>Learning Integration</h3>
+                        <div class="source-type">Continuous Improvement</div>
+                        <p>System learns from human feedback patterns to improve future AI concept generation and reduce iteration cycles.</p>
+                        <div class="capabilities">
+                            <span class="capability">Feedback Analysis</span>
+                            <span class="capability">Pattern Recognition</span>
+                            <span class="capability">Model Updates</span>
+                            <span class="capability">Preference Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="refinement-tools" class="content-section">
+                <h2>Refinement Tools & Capabilities</h2>
+                <div class="workflow-container">
+                    <div class="workflow-card">
+                        <h3>Concept Comparison Engine</h3>
+                        <p>Side-by-side comparison tools for evaluating multiple concept variations with scoring, annotation, and decision-making support.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Multiple concept variations
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Comparative analysis, scoring
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Ranked concepts with rationale
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Iterative Feedback Loop</h3>
+                        <p>Structured feedback capture system that translates human input into actionable AI refinement parameters for immediate concept improvement.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Human feedback, concept status
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Feedback translation, parameter adjustment
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Refined AI parameters
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Strategic Direction Adjustment</h3>
+                        <p>Tools for modifying strategic parameters and creative direction based on evolving campaign objectives and market insights.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Strategic updates, market changes
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Direction adjustment, realignment
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Updated strategic parameters
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-card">
+                        <h3>Quality Convergence Tracking</h3>
+                        <p>Automated monitoring of concept quality improvement and convergence toward optimal solutions with iteration efficiency metrics.</p>
+                        <div class="workflow-details">
+                            <div class="workflow-input">
+                                <strong>Input:</strong> Iteration history, quality metrics
+                            </div>
+                            <div class="workflow-process">
+                                <strong>Process:</strong> Convergence analysis, efficiency tracking
+                            </div>
+                            <div class="workflow-output">
+                                <strong>Output:</strong> Quality progression reports
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="iteration-management" class="content-section">
+                <h2>Iteration Management & Optimization</h2>
+                <div class="human-loop-benefits">
+                    <h3>Collaborative Refinement Benefits</h3>
+                    <ul>
+                        <li><strong>Creative Control:</strong> Human teams maintain creative direction while leveraging AI capabilities</li>
+                        <li><strong>Real-time Iteration:</strong> Immediate concept refinement reduces development cycles</li>
+                        <li><strong>Strategic Alignment:</strong> Continuous alignment with brand and campaign objectives</li>
+                        <li><strong>Quality Improvement:</strong> Iterative refinement leads to superior creative outcomes</li>
+                        <li><strong>Learning Enhancement:</strong> System improves through human feedback integration</li>
+                        <li><strong>Team Collaboration:</strong> Enhanced collaboration between human creativity and AI efficiency</li>
+                    </ul>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">3-5</div>
+                        <div class="metric-label">Avg Iterations</div>
+                        <p>Average number of refinement cycles to reach optimal concept quality</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">< 2hrs</div>
+                        <div class="metric-label">Refinement Time</div>
+                        <p>Total time for collaborative refinement from initial concept to final approval</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">90%+</div>
+                        <div class="metric-label">Strategic Alignment</div>
+                        <p>Percentage of refined concepts achieving strategic and brand alignment targets</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">85%+</div>
+                        <div class="metric-label">Human Satisfaction</div>
+                        <p>Creative team satisfaction with collaborative refinement process and outcomes</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Dedicated Comments Panel -->
+        <aside class="comments-panel">
+            <div class="comments-panel-header">
+                <h3>
+                    💬 Comments & Feedback
+                    <span class="comment-count">(0)</span>
+                </h3>
+            </div>
+            <div class="comments-panel-body">
+                <button class="add-comment-btn" onclick="toggleCommentMode()">
+                    ✏️ Add Comment to Page
+                </button>
+                
+                <div id="commentsContainer">
+                    <div class="no-comments">
+                        <p>No comments yet on this workflow.</p>
+                        <p>Enable comment mode and click anywhere on the page to start discussing the Collaborative Refinement process!</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Comment Toggle Button (Mobile) -->
+    <button class="comment-toggle-btn" onclick="toggleCommentsPanel()" title="Toggle Comments">
+        💬
+    </button>
+
+    <!-- Comment Mode Overlay -->
+    <div id="comment-overlay" class="comment-overlay">
+        <div class="comment-instructions">
+            Click anywhere on the page to add a comment
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="comment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('comment-modal')">&times;</span>
+            <h3>Add Comment</h3>
+            <textarea id="comment-text" placeholder="Enter your comment or suggestion..."></textarea>
+            <div class="modal-actions">
+                <button onclick="saveComment()">Save Comment</button>
+                <button onclick="closeModal('comment-modal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="team-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('team-modal')">&times;</span>
+            <h3>Team Collaboration</h3>
+            <div class="team-section">
+                <h4>Active Contributors</h4>
+                <div class="team-list">
+                    <div class="team-member">👤 Jason Ryan (Product Lead)</div>
+                    <div class="team-member">👤 Creative Team Lead</div>
+                    <div class="team-member">👤 Technical Lead</div>
+                </div>
+            </div>
+            <div class="team-section">
+                <h4>Recent Activity</h4>
+                <div class="activity-feed">
+                    <div class="activity-item">Comment added to collaboration framework</div>
+                    <div class="activity-item">Edit suggested for refinement tools</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comment Modal -->
+    <div id="commentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>💬 Add Comment</h3>
+                <button class="close-btn" onclick="closeCommentModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="commentContext" class="comment-context-display" style="display: none;"></div>
+                <div class="user-info">
+                    <input type="text" id="commentAuthor" placeholder="Your name (required)" required>
+                    <input type="email" id="commentEmail" placeholder="Email (optional)">
+                </div>
+                <textarea id="commentText" placeholder="Share your thoughts, suggestions, or questions..."></textarea>
+                <div class="comment-options">
+                    <select id="commentType">
+                        <option value="comment">💬 Comment</option>
+                        <option value="suggestion">✏️ Suggestion</option>
+                        <option value="question">❓ Question</option>
+                        <option value="idea">💡 New Idea</option>
+                    </select>
+                    <select id="commentPriority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeCommentModal()">Cancel</button>
+                <button class="btn-primary" onclick="submitComment()">Add Comment</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Activity Modal -->
+    <div id="teamModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>👥 Team Activity & Feedback</h3>
+                <button class="close-btn" onclick="closeTeamModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="teamActivityContent">
+                    <div class="activity-tabs">
+                        <button class="tab-btn active" onclick="showTab('recent')">Recent Activity</button>
+                        <button class="tab-btn" onclick="showTab('comments')">All Comments</button>
+                        <button class="tab-btn" onclick="showTab('decisions')">Decisions</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="recentTab" class="tab-pane active">
+                            <p class="empty-state">No recent activity. Start by adding comments to begin collaboration!</p>
+                        </div>
+                        <div id="commentsTab" class="tab-pane">
+                            <p class="empty-state">No comments yet. Enable comment mode and click anywhere to add feedback.</p>
+                        </div>
+                        <div id="decisionsTab" class="tab-pane">
+                            <p class="empty-state">No decisions recorded yet. Decisions will appear here as the team reaches consensus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set the current section for this page
+        window.currentSection = 'collaborative-refinement';
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html>

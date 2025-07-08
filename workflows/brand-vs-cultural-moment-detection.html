@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand vs Cultural Detection Workflow - HIVE 3.0</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <script src="../auth.js"></script>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="zeno-logo">ZENO</span>
+                <span class="logo-text">AI HIVE</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Documentation</a>
+                <a href="#" class="nav-active">Workflow Specs</a>
+                <a href="#" onclick="toggleCommentMode()">💬 Comment Mode</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>🔄 Detection Workflows</h3>
+                <nav class="sidebar-nav">
+                    <a href="../detection.html">← Back to Detection</a>
+                    <a href="cultural-signal-detection.html">Cultural Signal Detection</a>
+                    <a href="peak-metrics-integration.html">Peak Metrics API</a>
+                    <a href="brand-cultural-detection.html" class="nav-active">Brand vs Cultural Detection</a>
+                    <a href="trend-velocity-analysis.html">Trend Velocity Analysis</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>🔍 Brand vs Cultural Detection Workflow</h1>
+                <p class="subtitle">AI classification system to distinguish organic cultural moments from brand-driven content</p>
+                <div class="status-badge">Critical Filtering Process</div>
+            </div>
+
+            <section class="content-section">
+                <h2>Classification Challenge</h2>
+                <div class="workflow-card">
+                    <h3>Authenticity vs Brand Noise</h3>
+                    <p>The core challenge in cultural moment detection is filtering out brand-generated noise to focus on authentic cultural movements that present genuine engagement opportunities. This workflow uses AI to identify organic cultural discussions vs. paid or promoted brand content.</p>
+                    
+                    <div class="classification-metrics">
+                        <div class="metric-item">
+                            <span class="metric-value">95%+</span>
+                            <span class="metric-label">Authenticity Accuracy</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">< 30 sec</span>
+                            <span class="metric-label">Classification Time</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">10:1</span>
+                            <span class="metric-label">Signal to Noise Ratio</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>AI Classification Engine</h2>
+                <div class="data-grid">
+                    <div class="data-source-card primary">
+                        <h3>🤖 Authenticity Detector Agent</h3>
+                        <div class="source-type">Primary Classification AI</div>
+                        <p>Specialized AI agent that analyzes conversation patterns, engagement authenticity, and content source credibility to distinguish organic cultural moments from brand-driven content.</p>
+                        <div class="capabilities">
+                            <span class="capability">Source credibility analysis</span>
+                            <span class="capability">Engagement pattern recognition</span>
+                            <span class="capability">Content authenticity scoring</span>
+                        </div>
+                        <div class="agent-details">
+                            <h4>Classification Criteria:</h4>
+                            <ul>
+                                <li><strong>Organic Signals:</strong> Grassroots conversations, user-generated content, spontaneous engagement</li>
+                                <li><strong>Brand Signals:</strong> Promoted content, sponsored posts, coordinated campaigns</li>
+                                <li><strong>Hybrid Signals:</strong> Brand response to organic moments, influencer partnerships</li>
+                                <li><strong>Authenticity Markers:</strong> Emotional resonance, community-driven spread, diverse source origins</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="data-source-card">
+                        <h3>📊 Brand Mention Analyzer</h3>
+                        <div class="source-type">Brand Intelligence AI</div>
+                        <p>Analyzes how brands are naturally mentioned within cultural conversations to identify opportunities where brand participation would feel authentic rather than opportunistic.</p>
+                        <div class="capabilities">
+                            <span class="capability">Brand mention context</span>
+                            <span class="capability">Participation opportunity scoring</span>
+                            <span class="capability">Authenticity risk assessment</span>
+                        </div>
+                        <div class="agent-details">
+                            <h4>Analysis Framework:</h4>
+                            <ul>
+                                <li><strong>Natural Integration:</strong> Brands mentioned organically within cultural conversations</li>
+                                <li><strong>Category Relevance:</strong> Cultural moments naturally aligned with brand categories</li>
+                                <li><strong>Audience Overlap:</strong> Cultural moment participants match brand demographics</li>
+                                <li><strong>Values Alignment:</strong> Cultural values consistent with brand positioning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Detection Process Flow</h2>
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Signal Ingestion</h3>
+                            <p>Raw social signals and cultural moments are ingested from Peak Metrics API and other detection sources for classification analysis.</p>
+                            <div class="automation-details">
+                                <span class="automation-tag">Automated</span>
+                                <p>Real-time data stream processing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Source Analysis</h3>
+                            <p><strong>Authenticity Detector Agent</strong> analyzes content sources, engagement patterns, and spread mechanisms to identify organic vs. promoted content.</p>
+                            <div class="automation-details">
+                                <span class="automation-tag">AI Classification</span>
+                                <p>Content source credibility + engagement authenticity</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Brand Mention Context</h3>
+                            <p><strong>Brand Mention Analyzer</strong> examines how brands appear in cultural conversations and scores opportunities for authentic participation.</p>
+                            <div class="automation-details">
+                                <span class="automation-tag">AI Analysis</span>
+                                <p>Brand context mapping + participation scoring</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Authenticity Scoring</h3>
+                            <p>Multi-factor scoring algorithm combines source credibility, engagement patterns, and brand integration potential to generate authenticity scores.</p>
+                            <div class="automation-details">
+                                <span class="automation-tag">ML Scoring</span>
+                                <p>Weighted algorithm + historical validation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Filtered Output</h3>
+                            <p>High-authenticity cultural moments are passed to Ideation phase with brand participation recommendations and risk assessments.</p>
+                            <div class="automation-details">
+                                <span class="automation-tag">Automated</span>
+                                <p>Threshold-based filtering + context data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Classification Framework</h2>
+                <div class="classification-grid">
+                    <div class="classification-card organic">
+                        <h3>✅ Organic Cultural Moments</h3>
+                        <div class="classification-indicators">
+                            <span class="indicator">User-generated origins</span>
+                            <span class="indicator">Diverse source spread</span>
+                            <span class="indicator">Emotional authenticity</span>
+                            <span class="indicator">Community-driven growth</span>
+                        </div>
+                        <p><strong>Action:</strong> High priority for ideation pipeline</p>
+                    </div>
+                    
+                    <div class="classification-card brand-driven">
+                        <h3>⚠️ Brand-Driven Content</h3>
+                        <div class="classification-indicators">
+                            <span class="indicator">Sponsored origins</span>
+                            <span class="indicator">Coordinated messaging</span>
+                            <span class="indicator">Promotional language</span>
+                            <span class="indicator">Centralized distribution</span>
+                        </div>
+                        <p><strong>Action:</strong> Filter out from cultural moments</p>
+                    </div>
+                    
+                    <div class="classification-card hybrid">
+                        <h3>🔄 Hybrid Opportunities</h3>
+                        <div class="classification-indicators">
+                            <span class="indicator">Organic-brand intersection</span>
+                            <span class="indicator">Influencer participation</span>
+                            <span class="indicator">Brand response potential</span>
+                            <span class="indicator">Authentic engagement layer</span>
+                        </div>
+                        <p><strong>Action:</strong> Evaluate for participation approach</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Success Metrics & Validation</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>Classification Accuracy</h3>
+                        <div class="metric-value">95%+</div>
+                        <p>Correctly identified organic vs. brand-driven content</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>False Positive Rate</h3>
+                        <div class="metric-value">< 5%</div>
+                        <p>Brand content incorrectly classified as organic</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Processing Speed</h3>
+                        <div class="metric-value">< 30 sec</div>
+                        <p>Time from signal to classification result</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Signal Quality</h3>
+                        <div class="metric-value">10:1</div>
+                        <p>Authentic signals vs. filtered noise ratio</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Continuous Learning & Improvement</h2>
+                <div class="learning-workflow">
+                    <div class="learning-step">
+                        <h3>Performance Feedback</h3>
+                        <p>Campaign success data feeds back to validate classification accuracy and improve future authenticity scoring.</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="learning-step">
+                        <h3>Model Refinement</h3>
+                        <p>AI models continuously updated based on successful organic moment identifications and failed brand-driven false positives.</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="learning-step">
+                        <h3>Threshold Optimization</h3>
+                        <p>Classification thresholds dynamically adjusted based on client success rates and market evolution.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="comments-panel">
+            <div class="comments-panel-header">
+                <h3>💬 Classification Comments <span class="comment-count">(0)</span></h3>
+            </div>
+            <div class="comments-panel-body">
+                <button class="add-comment-btn" onclick="toggleCommentMode()">✏️ Add Classification Note</button>
+                <div id="commentsContainer">
+                    <div class="no-comments">
+                        <p>No classification comments yet. Add insights about brand vs cultural detection algorithms.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        window.currentSection = 'brand-cultural-detection';
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html>

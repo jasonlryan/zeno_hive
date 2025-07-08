@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Review Process - HIVE 3.0</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <script src="../auth.js"></script>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="zeno-logo">ZENO</span>
+                <span class="logo-text">AI HIVE</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Documentation</a>
+                <a href="#" class="nav-active">Workflow Specs</a>
+                <a href="#" onclick="toggleCommentMode()">💬 Comment Mode</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>🔄 Workflow Specifications</h3>
+                <nav class="sidebar-nav">
+                    <a href="../ideation.html">← Back to Ideation</a>
+                    <a href="peak-metrics-integration.html">Peak Metrics API</a>
+                    <a href="human-review-process.html" class="nav-active">Human Review Process</a>
+                    <a href="scoring-algorithm.html">Scoring Algorithm</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>👤 Human-in-Loop Review Process</h1>
+                <p class="subtitle">Strategic human touchpoints for creative evaluation and concept refinement</p>
+                <div class="status-badge">Process Specification</div>
+                <div class="human-loop-badge">Critical Path</div>
+            </div>
+
+            <section class="content-section">
+                <h2>Review Stages & Criteria</h2>
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Strategic Review (Strategists)</h3>
+                            <p>Initial review of AI-generated concepts for brand alignment, cultural sensitivity, and strategic value.</p>
+                            <div class="review-criteria">
+                                <h4>Evaluation Criteria:</h4>
+                                <ul>
+                                    <li>Brand authenticity and voice consistency</li>
+                                    <li>Cultural moment relevance and appropriateness</li>
+                                    <li>Strategic business objective alignment</li>
+                                    <li>Risk assessment (brand safety, reputation)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Creative Review (Creative Directors)</h3>
+                            <p>Creative evaluation of concepts for innovation, execution potential, and artistic merit.</p>
+                            <div class="review-criteria">
+                                <h4>Evaluation Criteria:</h4>
+                                <ul>
+                                    <li>"Artistic intelligence married with artificial intelligence"</li>
+                                    <li>Real-time response creative potential</li>
+                                    <li>Newsjacking and cultural relevance</li>
+                                    <li>Multi-channel adaptability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Toggle Workflow Control</h2>
+                <div class="workflow-card">
+                    <h3>Human Intervention Points</h3>
+                    <p>Toggle mechanism allows pausing workflows at each stage for human review and refinement of prompts or output.</p>
+                    
+                    <div class="toggle-controls">
+                        <h4>Workflow Control Options:</h4>
+                        <div class="control-grid">
+                            <div class="control-card">
+                                <h5>Auto-Pass</h5>
+                                <p>AI concepts automatically advance based on scoring thresholds</p>
+                            </div>
+                            <div class="control-card">
+                                <h5>Review Queue</h5>
+                                <p>All concepts require human approval before advancement</p>
+                            </div>
+                            <div class="control-card">
+                                <h5>Conditional Review</h5>
+                                <p>Human review triggered by specific criteria or risk flags</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Feedback Integration</h2>
+                <div class="data-grid">
+                    <div class="data-source-card primary">
+                        <h3>Prompt Refinement</h3>
+                        <div class="source-type">AI Training</div>
+                        <p>Human feedback directly improves AI prompts and output quality through iterative learning.</p>
+                        <div class="capabilities">
+                            <span class="capability">Prompt optimization</span>
+                            <span class="capability">Quality improvement</span>
+                            <span class="capability">Brand training</span>
+                        </div>
+                    </div>
+                    
+                    <div class="data-source-card">
+                        <h3>Performance Correlation</h3>
+                        <div class="source-type">Learning Loop</div>
+                        <p>Human approval decisions correlated with campaign performance to improve future AI accuracy.</p>
+                        <div class="capabilities">
+                            <span class="capability">Decision tracking</span>
+                            <span class="capability">Performance analysis</span>
+                            <span class="capability">Model refinement</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Scoring & Prioritization</h2>
+                <div class="workflow-container">
+                    <div class="workflow-card">
+                        <h3>Concept Scoring Algorithm</h3>
+                        <p>Multi-factor scoring system to evaluate ideas and determine review priority and advancement criteria.</p>
+                        <div class="scoring-factors">
+                            <h4>Scoring Criteria:</h4>
+                            <ul>
+                                <li><strong>Brand Fit Score:</strong> Alignment with brand guidelines and voice</li>
+                                <li><strong>Cultural Relevance:</strong> Authenticity and appropriateness of moment connection</li>
+                                <li><strong>Performance Prediction:</strong> Historical data-based success probability</li>
+                                <li><strong>Risk Assessment:</strong> Brand safety and reputation considerations</li>
+                                <li><strong>Innovation Index:</strong> Creative uniqueness and differentiation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="comments-panel">
+            <div class="comments-panel-header">
+                <h3>💬 Process Comments <span class="comment-count">(0)</span></h3>
+            </div>
+            <div class="comments-panel-body">
+                <button class="add-comment-btn" onclick="toggleCommentMode()">✏️ Add Process Note</button>
+                <div id="commentsContainer">
+                    <div class="no-comments">
+                        <p>No process comments yet. Add workflow refinements and review criteria.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        window.currentSection = 'human-review-process';
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html> 
