@@ -15,9 +15,9 @@
   ],
   "redirects": [
     {
-      "source": "/(.*)",
-      "destination": "https://zeno-hive.vercel.app/$1",
-      "statusCode": 301
+      "source": "/",
+      "destination": "/login.html",
+      "statusCode": 302
     }
   ],
   "headers": [
