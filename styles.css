@@ -1610,3 +1610,34 @@ body {
         width: 100%;
     }
 } 
+
+/* FAQ & Glossary Glossary Section Styles */
+.glossary-list {
+  margin: 2em 0 0 0;
+  padding: 0;
+}
+.glossary-list dt {
+  font-weight: 600;
+  font-size: 1.08em;
+  margin-top: 1.2em;
+  margin-bottom: 0.2em;
+  color: #222;
+  background: none;
+  padding: 0;
+}
+.glossary-list dd {
+  margin-left: 1.5em;
+  margin-bottom: 0.8em;
+  font-size: 1em;
+  color: #444;
+  background: none;
+  padding: 0 0 0.5em 0;
+  border-left: 3px solid #e0e7ef;
+  padding-left: 1em;
+}
+
+/* Optional: Add a subtle divider between terms */
+.glossary-list dt:not(:first-child) {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1em;
+} 

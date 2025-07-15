@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <meta name="googlebot" content="noindex, nofollow">
+    <title>FAQ & Glossary - AI Hive System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="auth.js"></script>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="zeno-logo">ZENO</span>
+                <span class="logo-text">AI HIVE</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Documentation</a>
+                <a href="#" class="nav-active">System Areas</a>
+                <a href="#" onclick="toggleCommentMode()">💬 Comment Mode</a>
+                <a href="#" onclick="showTeamActivity()">👥 Team</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>📋 Documentation</h3>
+                <nav class="sidebar-nav">
+                    <a href="index.html">📖 Project Overview</a>
+                    <a href="index.html#prd">📄 Product Requirements (PRD)</a>
+                    <a href="index.html#functional-spec">🔧 Functional Specification</a>
+                    <a href="index.html#integration">🔗 Integration Requirements</a>
+                    <a href="index.html#technical">⚙️ Technical Addendum</a>
+                    <a href="index.html#ui-spec">🎨 UI Specification</a>
+                </nav>
+            </div>
+            <div class="sidebar-section">
+                <h3>🏗️ System Areas</h3>
+                <nav class="sidebar-nav">
+                    <a href="detection.html">📡 Detection</a>
+                    <a href="ideation.html">🧠 Ideation</a>
+                    <a href="creation.html">✨ Creation</a>
+                    <a href="distribution.html">🚀 Distribution</a>
+                    <a href="faq.html" class="nav-active">❓ FAQ & Glossary</a>
+                </nav>
+            </div>
+            <div class="sidebar-section">
+                <h3>Quick Links</h3>
+                <nav class="sidebar-nav">
+                    <a href="index.html">← Back to Docs</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#glossary">Glossary</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>❓ FAQ & Glossary</h1>
+                <p class="subtitle">Frequently Asked Questions and Key Terms for the AI Hive System</p>
+            </div>
+
+            <section id="faq" class="content-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>What tools are DJE-approved?</h3>
+                        <p>Tools that have been reviewed and approved by DJE/Edelman for use in client work are marked with a <span title="DJE Approved">✅</span> in the documentation. Examples include PeakMetrics API and Connected GPTs. Tools in testing or not approved are marked with ⚠️ or 🚫 respectively.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do alerts trigger?</h3>
+                        <p>Alerts are triggered when the AI system detects a significant cultural moment based on real-time data from sources like PeakMetrics or TikTok trends. The system automatically notifies the relevant teams and phases for review and action.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can clients access the platform?</h3>
+                        <p>Client-facing interfaces are available for review only after internal QA and approval. Most platform features are designed for internal team use, with select outputs and dashboards shared with clients as needed.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Where does audience data come from?</h3>
+                        <p>Audience data is sourced from platforms like StatSocial and other approved data providers. Synthetic personas are generated using this data where available, and are used to inform campaign strategy and creative development.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How is tool compliance status shown?</h3>
+                        <p>Each tool or data source in the documentation is marked with a compliance status: <span title="DJE Approved">✅</span> DJE Approved, <span title="In Testing">⚠️</span> In Testing, or <span title="Not Approved">🚫</span> Not Approved.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How are metrics and reporting handled?</h3>
+                        <p>Metrics such as alert delivery time, engagement, false positive rate, and brand relevance are tracked and reported through automated dashboards and regular intelligence briefings.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="glossary" class="content-section">
+                <h2>Glossary of Key Terms</h2>
+                <dl class="glossary-list">
+                    <dt>DCO (Dynamic Creative Optimization)</dt>
+                    <dd>Technology that automatically optimizes creative assets in real time based on audience data and performance metrics.</dd>
+                    <dt>PeakMetrics</dt>
+                    <dd>A DJE-approved platform for real-time social velocity tracking, engagement metrics, and trend trajectory analysis across major platforms.</dd>
+                    <dt>StatSocial</dt>
+                    <dd>A data provider used to generate synthetic audience personas and inform campaign targeting and creative development.</dd>
+                    <dt>Connected GPTs</dt>
+                    <dd>Custom AI models trained on brand voice, historical campaigns, and performance data to generate on-brand creative concepts.</dd>
+                    <dt>Compliance Status</dt>
+                    <dd>Indicates whether a tool or data source is DJE Approved (✅), In Testing (⚠️), or Not Approved (🚫).</dd>
+                    <dt>Alert Trigger</dt>
+                    <dd>An automated notification generated when the system detects a significant cultural moment or trend relevant to client objectives.</dd>
+                    <dt>Synthetic Persona</dt>
+                    <dd>An AI-generated audience profile based on real-world data, used to simulate target demographic preferences and behaviors.</dd>
+                    <dt>Human-in-Loop</dt>
+                    <dd>A workflow design where human review and refinement are required before AI-generated outputs are finalized or delivered to clients.</dd>
+                    <dt>Brand Compliance</dt>
+                    <dd>Ensuring all creative assets and outputs adhere to client brand guidelines, visual identity, and messaging standards.</dd>
+                </dl>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
